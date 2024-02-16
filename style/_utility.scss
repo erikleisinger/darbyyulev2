@@ -1,0 +1,34 @@
+.d-flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-space-between {
+    justify-content: space-between;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.row-reverse {
+    flex-direction: row-reverse;
+}
+.col-reverse {
+    flex-direction: column-reverse;
+}
+
+.clickable {
+    cursor: pointer;
+    transition: transform 0.2s;
+    &:hover {
+        transform: scale(1.05);
+    }
+}

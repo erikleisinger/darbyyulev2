@@ -1,0 +1,43 @@
+body {
+    font-family: "Darker Grotesque", sans-serif;
+    color: $brand-slate;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: unset;
+    margin: unset;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 75px;
+    line-height: 90px;
+    @include breakpoint(small) {
+        font-size: 23px;
+        line-height: 29px;
+    }
+}
+
+h2 {
+    font-family: "Darker Grotesque", sans-serif;
+    text-transform: uppercase;
+    font-size: 27.92px;
+    line-height: 37.87px;
+    @include breakpoint(small) {
+        font-size: 14.81px;
+        line-height: 20.08px;
+    }
+
+}

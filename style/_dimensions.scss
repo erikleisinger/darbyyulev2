@@ -1,0 +1,26 @@
+$xs-reference-width: 390px;
+$xs-reference-height: 640px;
+$desktop-reference-width: 1512px;
+$desktop-reference-height: 982px;
+
+// arg in pixesl
+@function calcDimension($n, $small: false, $width: true) {
+    @if $small {
+        @if $width {
+            @return calc($n / $xs-reference-width * 100 * 1vw);
+        }
+        @else {
+            @return calc($n / $xs-reference-height * 100 * 1vh);
+        }
+      
+    }
+    @else {
+        @if $width {
+            @return calc($n / $desktop-reference-width * 100 * 1vw);
+        }
+        @else {
+            @return calc($n / $desktop-reference-height * 100 * 1vh);
+        }
+       
+    }
+}
