@@ -2,17 +2,24 @@
   <nav
     class="nav-bar d-flex justify-center align-center"
     :class="{ light, expanded, 'flex-column col-reverse': isXs }"
+    v-if="mounted"
   >
-    <div class="nav-menu" :class="{light}">
+    <div class="nav-menu" :class="{ light }">
       <div class="nav-menu__button">
-        <NavBarButton name="mdi:home" selected :light="light" />
+        <NavBarButton name="carbon:home" selected :light="light" @click="navigateTo('/')" />
       </div>
-      <div class="nav-menu__button"><NavBarButton name="mdi:home" :light="light"/></div>
-      <div class="nav-menu__button"><NavBarButton name="mdi:home" :light="light"/></div>
-      <div class="nav-menu__button"><NavBarButton name="mdi:home" :light="light"/></div>
+      <div class="nav-menu__button">
+        <NavBarButton name="carbon:user-profile" :light="light" @click="navigateTo('/philosophy')"/>
+      </div>
+      <div class="nav-menu__button">
+        <NavBarButton name="carbon:workspace" :light="light" @click="navigateTo('/portfolio')"/>
+      </div>
+      <div class="nav-menu__button">
+        <NavBarButton name="carbon:email" :light="light" @click="navigateTo('/contact')"/>
+      </div>
     </div>
     <div
-      class="nav-tab d-flex justify-center align-center "
+      class="nav-tab d-flex justify-center align-center"
       style="position: relative"
       :class="{ light, clickable: !expanded }"
       @click="expanded = !expanded"
@@ -20,10 +27,10 @@
       <Icon
         :name="isXs ? 'mdi:chevron-up' : 'mdi:chevron-right'"
         :color="light ? getColor('mustard') : 'white'"
-        :size="isXs ? '45px' : '65px'"
+        :size="isXs ? '45px' : '48px'"
         style="position: absolute; margin: auto"
         class="tab-icon"
-        :class="{expanded}"
+        :class="{ expanded }"
       />
     </div>
   </nav>
@@ -32,37 +39,47 @@
 <script setup>
 import { useBreakpoint } from "~/composables/breakpoint";
 
-
 const { isXs } = useBreakpoint();
 const { getColor, light } = useColor();
 
+const mounted = ref(false);
+
+onMounted(() => {
+  mounted.value = true;
+})
+
 const expanded = ref(false);
-
-
 </script>
 
 <style lang="scss" scoped>
+$nav-width-desktop: 48px;
+$tab-width-desktop: 24px;
+
 .nav-bar {
+  z-index: 10;
   position: fixed;
   left: 0;
-  top: 0;
+
   bottom: 0;
+  right: 0;
   margin: auto;
 
   @include breakpoint(small) {
-    top: unset;
-    right: 0;
+    top: 0;
+    right: unset;
   }
   transition: transform 0.2s;
-  transform: translateX(calc(-1 * 64px));
+
+  transform: translateY(calc(calcDimension(46px, true, false)));
   &.expanded {
-    transform: translateX(0);
+     transform: translateY(0);
   }
 
   @include breakpoint(small) {
-    transform: translateY(calc(calcDimension(46px, true, false)));
+    transform: translateX(calc(-1 * $nav-width-desktop));
     &.expanded {
-      transform: translateY(0);
+     
+      transform: translateX(0);
     }
   }
 
@@ -75,23 +92,23 @@ const expanded = ref(false);
   }
 
   .nav-tab {
-    height: calcDimension(165px, false, false);
+    height: 20px;
+
     @include breakpoint(small) {
-      height: 20px;
+      height: calcDimension(165px, false, false);
     }
 
-    width: 39px;
+    width: 69px;
     @include breakpoint(small) {
-      width: 69px;
+      width: $tab-width-desktop;
     }
 
-    border-top-right-radius: 16.75px;
-    border-bottom-right-radius: 16.75px;
-
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
     @include breakpoint(small) {
-      border-bottom-right-radius: unset;
-      border-top-right-radius: 10px;
-      border-top-left-radius: 10px;
+      border-top-left-radius: unset;
+      border-top-right-radius: 16.75px;
+      border-bottom-right-radius: 16.75px;
     }
 
     cursor: pointer;
@@ -102,36 +119,34 @@ const expanded = ref(false);
       &.expanded {
         transform: rotate(180deg);
       }
-
-
     }
   }
 
   .nav-menu {
-    height: calcDimension(507.27px, false, false);
-    max-height:calcDimension(507.27px, false, false);
+    height: calcDimension(46px, true, false);
+    max-height: calcDimension(46px, true, false);
     @include breakpoint(small) {
-      height: calcDimension(46px, true, false);
-      max-height: calcDimension(46px, true, false);
+      height: calcDimension(507.27px, false, false);
+      max-height: calcDimension(507.27px, false, false);
     }
 
-    width: 64px;
+    width: 100vw;
     @include breakpoint(small) {
-      width: 100vw;
+      width: $nav-width-desktop;
     }
 
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
-
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     @include breakpoint(small) {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
     }
 
     display: flex;
-    flex-direction: column;
+
+    flex-direction: row;
     @include breakpoint(small) {
-      flex-direction: row;
+      flex-direction: column;
     }
 
     .nav-menu__button {
@@ -139,19 +154,17 @@ const expanded = ref(false);
       display: flex;
       justify-content: center;
       align-items: center;
-        padding: 10px;
 
-    @include breakpoint(small) {
       padding: calcDimension(8px, true, false);
+      @include breakpoint(small) {
+        padding: 12px;
+      }
     }
-    }
-
-  
   }
 }
 </style>
 <script>
 export default {
-  name: 'NavBar'
-}
+  name: "NavBar",
+};
 </script>

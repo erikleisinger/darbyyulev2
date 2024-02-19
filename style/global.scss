@@ -14,7 +14,8 @@ body {
 h1,
 h2,
 h3,
-h4 {
+h4, 
+p {
     line-height: unset;
     margin: unset;
 }
@@ -22,22 +23,43 @@ h4 {
 h1 {
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
-    font-size: 75px;
-    line-height: 90px;
-    @include breakpoint(small) {
-        font-size: 23px;
+    font-size: 23px;
         line-height: 29px;
+    @include breakpoint(small) {
+        
+        font-size: 75px;
+        font-size: min(calcDimension(75px, false, true), 75px);
+    line-height: 90px;
     }
 }
 
 h2 {
     font-family: "Darker Grotesque", sans-serif;
     text-transform: uppercase;
-    font-size: 27.92px;
-    line-height: 37.87px;
+    font-weight: 700;
+    font-size: 14.81px;
+    line-height: 20.08px;
     @include breakpoint(small) {
-        font-size: 14.81px;
-        line-height: 20.08px;
+        
+        font-size: 27.92px;
+        font-size: calcDimension(27.92px, false, true);
+        line-height: 37.87px;
+        line-height: calcDimension(37.87px, false, true)
     }
 
 }
+
+// Responsive classes
+
+:root {
+    --vh: 1vh;
+  }
+
+  @mixin full-page {
+    height: calc(100 * var(--vh, 1vh));
+  }
+
+  .full-page {
+    @include full-page;
+    width: 100%;
+  }

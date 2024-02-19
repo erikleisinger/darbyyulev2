@@ -1,0 +1,48 @@
+<template>
+<div class="portfolio-container">
+<h1>Work</h1>
+<main class="cards-container justify-center">
+    <Card v-for="item in Object.keys(PORTFOLIO_ITEMS)" :key="item" :id="item">
+
+    </Card>
+</main>
+</div>
+</template>
+<style lang="scss" scoped>
+.portfolio-container {
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+   padding: calcDimension(16px, true, true);
+    padding-top: calcDimension(83px,
+     true, false);
+    @include breakpoint(small) {
+        padding: 0px calcDimension(108px, false, true);
+        padding-top: calcDimension(153px, false, false);
+    }
+
+    h1 {
+        width: 100%;
+        margin-bottom: 16px;
+        @include breakpoint(small) {
+            margin-bottom: 12px;
+        }
+    }
+}
+    .cards-container {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        @include breakpoint(small) {
+            gap: 37px;
+        }
+
+        
+        @include breakpoint(small) {
+            padding: unset;
+        }
+    }
+</style>
+<script setup>
+    import {PORTFOLIO_ITEMS} from '@/constants/content'
+</script>

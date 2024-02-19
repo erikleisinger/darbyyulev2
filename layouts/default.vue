@@ -1,11 +1,25 @@
 <template>
     <main class="app-content" :class="{light}">
+        <div class="logo__floating">
+        <Logo v-if="showLogo" :color="light ? getColor('white') : getColor('mustard')"/>
+        </div>
         <NavBar />
     <slot/>
     </main>
 </template>
 <script setup>
-    const {light} = useColor();
+    const {light, getColor} = useColor();
+    const {isXs} = useBreakpoint();
+
+    const route = useRoute()
+    const showLogo = computed(() => {
+        if (isXs.value) return false;
+        return [
+        '/portfolio',
+        '/contact',
+        '/philosophy'
+    ].includes(route.path)
+    })
 </script>
 <style lang="scss" scoped>
     .app-content {
@@ -14,8 +28,18 @@
         right: 0;
         left: 0;
         position: absolute;
+        overflow: auto;
         &.light {
             background-color: $brand-yellow;
+        }
+
+        .logo__floating {
+            position: absolute;
+            top: calcDimension(47px, false, false);
+            right: calcDimension(51px, false, true);
+            width: calcDimension(210px, false, true);
+            min-width: 150px;
+            
         }
     }
 </style>
