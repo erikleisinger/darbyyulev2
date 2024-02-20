@@ -11,16 +11,18 @@
       <div class="card-content">
         <h1>{{ item.expanded.title }}</h1>
         <p>{{ item.expanded.description }}</p>
+        <div v-if="isXs" class="divider">
+            <div class="divider-line"/>
+        </div>
         <div class="paragraphs-container">
           <div
-            v-for="paragraph in item.expanded.paragraphs"
+            v-for="paragraph, index in item.expanded.paragraphs"
             :key="paragraph.title"
             class="paragraph"
           >
-            <h3>{{ paragraph.title }}</h3>
+            <h3>{{indexToRoman(index)}}. {{ paragraph.title }}</h3>
             <p>{{ paragraph.content }}</p>
           </div>
-          "
         </div>
       </div>
     </main>
@@ -57,22 +59,34 @@
     grid-template-rows: calcDimension(175px, true, false) auto;
     @include breakpoint(small) {
       grid-template-rows: calcDimension(425px, false, false) auto;
-   
     }
 
     .card-content {
-        @include breakpoint(small) {
-               margin: 0px calcDimension(122px, false, true);
-               margin-top: calcDimension(46px, false, false);
-               >p {
-                font-size: 18px;
-                line-height: 18px;
-               }
-               >h1 {
-                font-size: 46px;
-                line-height: 56px;
-               }
+        margin: calcDimension(14px, true, false) calcDimension(24px, true, true);
+      > h1 {
+        font-size: 23.7px;
+        line-height: 28.89px;
+      }
+      h3 {
+        font-weight: normal;
+      
+      }
+      > p {
+        font-size: 14px;
+        line-height: 18px;
+        margin-top: 16px;
+      }
+      @include breakpoint(small) {
+        margin: calcDimension(46px, false, false) calcDimension(122px, false, true);
+       
+        > p {
+          font-size: 18px;
+          line-height: 18px;
         }
+        > h1 {
+          font-size: 46px;
+        }
+      }
     }
 
     .card-picture {
@@ -90,6 +104,7 @@
     }
 
     .paragraphs-container {
+      
       @include breakpoint(small) {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -101,13 +116,32 @@
 
       .paragraph {
         min-width: 50%;
+          margin-bottom: 24px;
+          @include breakpoint(small) {
+            margin-bottom: unset;
+          }
       }
+    }
+  }
+
+  .divider {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .divider-line {
+        background-color: $brand-yellow;
+        width: 100px;
+        height: 2px;
+        margin: 24px 0px;
     }
   }
 }
 </style>
 <script setup>
 import { PORTFOLIO_ITEMS } from "@/constants/content";
+import indexToRoman from '@/utils/roman-numerals'
 const props = defineProps({
   id: [String, Number],
 });
@@ -115,4 +149,6 @@ const props = defineProps({
 const item = PORTFOLIO_ITEMS[props.id];
 
 const emit = defineEmits(["close"]);
+
+const {isXs} = useBreakpoint();
 </script>

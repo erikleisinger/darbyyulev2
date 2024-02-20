@@ -108,11 +108,15 @@ export const PORTFOLIO_ITEMS = {
                 },
                 {
                     title: 'User Interface Design',
-                    content: `he CCC already has a design strategy that they preferred to use. Given that, my work on the UI had a lot more to do with making it calming, competent, and easy to user/look at. I made the main elements look like leaves of a lotus flower (the CCC’s symbol), I used calming gradients, and i based all of the visuals around hands reaching out for help. Our hands are such powerful indicators of our emotions. They are a powerful way of showing emotion and strength`
+                    content: `The CCC already has a design strategy that they preferred to use. Given that, my work on the UI had a lot more to do with making it calming, competent, and easy to user/look at. I made the main elements look like leaves of a lotus flower (the CCC’s symbol), I used calming gradients, and i based all of the visuals around hands reaching out for help. Our hands are such powerful indicators of our emotions. They are a powerful way of showing emotion and strength`
                 },
                 {
                     title: 'Content Design',
                     content: `Like most counselling centres, the CCC has a long waiting list. One of the largest barriers to finding mental health help is dealing with the pure volume of other clients who also need help. I came up with the idea to create a page specifically designed for people on the waitlist who need access to help immediately. This page includes videos with basic counselling strategies, links to other forms of help, written directions for emergency situations and access to the contact page for urgent matters.`
+                },
+                {
+                    title: 'Development',
+                    content: `Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante`
                 }
             ]
         }
@@ -184,7 +188,7 @@ export const PORTFOLIO_ITEMS = {
         card: {
             title: 'UX Writing',
             content: `A collection of UX Writing I have created for various projects. This collection includes blogs, pop ups, website content, content design.`,
-            picture: '',
+            picture: 'ux_writing_example.png',
             alt: 'UX Writing example'
         },
         expanded: {

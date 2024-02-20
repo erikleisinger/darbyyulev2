@@ -7,15 +7,15 @@
           :color="isXs ? getColor('slate') : getColor('mustard')"
         />
       </header>
-      <main class="splash-photo" >
+      <main class="splash-photo" style="cursor: pointer" @click="navigateTo('/portfolio')">
         <img v-if="isXs" :src="'splash_photo_mobile.png'" class="splash-img"/>
         
         <img v-else :src="'splash_photo.png'" class="splash-img" />
       </main>
       <nav class="splash-nav d-flex">
-        <div>UX Design</div>
-        <div>Graphics</div>
-        <div>UX Writing</div>
+        <div class="clickable" @click="navigateTo('/portfolio')">UX Design</div>
+        <div class="clickable" @click="navigateTo('/portfolio')">Graphics</div>
+        <div class="clickable" @click="navigateTo('/portfolio')">UX Writing</div>
       </nav>
     </div>
   </div>

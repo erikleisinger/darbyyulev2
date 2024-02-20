@@ -11,7 +11,7 @@
     </div>
   </div>
   <transition name="page">
-  <CardExpanded v-if="expanded" :id="id" @close="expanded = false"/>
+    <CardExpanded v-if="expanded" :id="id" @close="expanded = false" />
   </transition>
 </template>
 <script setup>
@@ -20,10 +20,9 @@ const props = defineProps({
   id: [Number, String],
 });
 
-
 const item = PORTFOLIO_ITEMS[props.id];
 
-const expanded = ref(false)
+const expanded = ref(false);
 </script>
 <style lang="scss" scoped>
 .card-container {
@@ -36,37 +35,25 @@ const expanded = ref(false)
   flex-grow: 1;
   @include breakpoint(small) {
     width: calcDimension(600px, false, true);
-    min-width: calc(50% - 100px);
+    // min-width: calc(50% - 100px);
+    max-width: 50%;
+     max-height: 300px;
   }
+
+ 
 
   .card-image-container {
     overflow: hidden;
-    display: flex;
-    align-items: center;
+    
     .card-image__control {
-     height: 100%;
-     width: 100%;
-      @include breakpoint(small) {
-//  aspect-ratio: 1/1;
-      }
-     
+      height: 100%;
+      width: 100%;
       position: relative;
     }
     img {
-        // width: 100%;
-         height: 100%;
-        @include breakpoint(small) {
-            
- height: 100%;
-        }
-   
-      // background-size:unset;
-      position: absolute;
-      top: -9999px;
-      left: -9999px;
-      right: -9999px;
-      bottom: -9999px;
-      margin: auto;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
     }
   }
 
@@ -75,15 +62,14 @@ const expanded = ref(false)
     padding-bottom: 12px;
     @include breakpoint(small) {
       padding: 15px 11px;
-      
     }
 
     p {
-        font-size: 9px;
-        @include breakpoint(small) {
-            font-size: calcDimension(17.45px, false, true);
-            line-height: calcDimension(23.66px, false, true);
-        }
+      font-size: 9px;
+      @include breakpoint(small) {
+        font-size: calcDimension(17.45px, false, true);
+        line-height: calcDimension(23.66px, false, true);
+      }
     }
   }
 }

@@ -3,12 +3,16 @@
     class="nav-bar d-flex justify-center align-center"
     :class="{ light, expanded, 'flex-column col-reverse': isXs }"
     v-if="mounted"
+    ref="navbar"
   >
     <div class="nav-menu" :class="{ light }">
-      <div class="nav-menu__button">
-        <NavBarButton name="carbon:home" selected :light="light" @click="goTo('/')" />
+      <div class="nav-menu__button" v-for="option in navOptions" :key="option.name">
+        <NavBarButton :name="option.icon" :selected="route.path === option.path" :light="light" @click="goTo(option.path)"/>
       </div>
-      <div class="nav-menu__button">
+      <!-- <div class="nav-menu__button">
+        <NavBarButton "  :light="light" @click="goTo('/')" />
+      </div>
+    <div class="nav-menu__button">
         <NavBarButton name="carbon:user-profile" :light="light" @click="goTo('/philosophy')"/>
       </div>
       <div class="nav-menu__button">
@@ -16,7 +20,7 @@
       </div>
       <div class="nav-menu__button">
         <NavBarButton name="carbon:email" :light="light" @click="goTo('/contact')"/>
-      </div>
+      </div> -->
     </div>
     <div
       class="nav-tab d-flex justify-center align-center"
@@ -38,6 +42,7 @@
 
 <script setup>
 import { useBreakpoint } from "~/composables/breakpoint";
+import {onClickOutside} from '@vueuse/core'
 
 const { isXs } = useBreakpoint();
 const { getColor, light } = useColor();
@@ -54,6 +59,37 @@ const goTo = (path) => {
   expanded.value = false;
   navigateTo(path);
 };
+
+const navbar = ref(null);
+
+onClickOutside(navbar, () => {
+  expanded.value = false;
+})
+
+const route = useRoute();
+
+const navOptions = [
+  {
+    name: "Home",
+    icon: "carbon:home",
+    path: "/",
+  },
+  {
+    name: "Philosophy",
+    icon: "carbon:user-profile",
+    path: "/philosophy",
+  },
+  {
+    name: "Portfolio",
+    icon: "carbon:workspace",
+    path: "/portfolio",
+  },  
+  {
+    name: "Contact",
+    icon: "carbon:email",
+    path: "/contact",
+    }
+]
 </script>
 
 <style lang="scss" scoped>
