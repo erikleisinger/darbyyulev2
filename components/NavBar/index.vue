@@ -6,16 +6,16 @@
   >
     <div class="nav-menu" :class="{ light }">
       <div class="nav-menu__button">
-        <NavBarButton name="carbon:home" selected :light="light" @click="navigateTo('/')" />
+        <NavBarButton name="carbon:home" selected :light="light" @click="goTo('/')" />
       </div>
       <div class="nav-menu__button">
-        <NavBarButton name="carbon:user-profile" :light="light" @click="navigateTo('/philosophy')"/>
+        <NavBarButton name="carbon:user-profile" :light="light" @click="goTo('/philosophy')"/>
       </div>
       <div class="nav-menu__button">
-        <NavBarButton name="carbon:workspace" :light="light" @click="navigateTo('/portfolio')"/>
+        <NavBarButton name="carbon:workspace" :light="light" @click="goTo('/portfolio')"/>
       </div>
       <div class="nav-menu__button">
-        <NavBarButton name="carbon:email" :light="light" @click="navigateTo('/contact')"/>
+        <NavBarButton name="carbon:email" :light="light" @click="goTo('/contact')"/>
       </div>
     </div>
     <div
@@ -49,6 +49,11 @@ onMounted(() => {
 })
 
 const expanded = ref(false);
+
+const goTo = (path) => {
+  expanded.value = false;
+  navigateTo(path);
+};
 </script>
 
 <style lang="scss" scoped>
