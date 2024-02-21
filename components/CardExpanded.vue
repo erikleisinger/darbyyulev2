@@ -140,7 +140,7 @@
 }
 </style>
 <script setup>
-import { PORTFOLIO_ITEMS } from "@/constants/content";
+import { PORTFOLIO_ITEMS } from "@/constants/content/portfolio";
 import indexToRoman from '@/utils/roman-numerals'
 const props = defineProps({
   id: [String, Number],

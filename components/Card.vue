@@ -6,8 +6,8 @@
       </div>
     </div>
     <div class="card-content-container">
-      <h2>{{ item.card.title }}</h2>
-      <p>{{ item.card.content }}</p>
+      <h2 ref="h2">{{ item.card.title }}</h2>
+      <p ref="p">{{ item.card.content }}</p>
     </div>
   </div>
   <transition name="page">
@@ -15,7 +15,8 @@
   </transition>
 </template>
 <script setup>
-import { PORTFOLIO_ITEMS } from "@/constants/content";
+import { PORTFOLIO_ITEMS } from "@/constants/content/portfolio";
+import {useElementBounding} from '@vueuse/core';
 const props = defineProps({
   id: [Number, String],
 });
@@ -23,6 +24,20 @@ const props = defineProps({
 const item = PORTFOLIO_ITEMS[props.id];
 
 const expanded = ref(false);
+
+
+/**
+ * Ensure height of card is the same as the content
+ */
+const {isXs} = useBreakpoint();
+const padding = computed(() => isXs.value ? 20 : 30)
+const h2 = ref(null);
+const p = ref(null);
+const contentContainer = ref(null);
+const {height: h2Height} = useElementBounding(h2);
+const {height: pHeight} = useElementBounding(p);
+
+const maxHeight = computed(() => `${h2Height.value + pHeight.value + padding.value}px`)
 </script>
 <style lang="scss" scoped>
 .card-container {
@@ -33,11 +48,10 @@ const expanded = ref(false);
   grid-template-columns: 30% 70%;
   overflow: hidden;
   flex-grow: 1;
+  max-height: v-bind(maxHeight);
   @include breakpoint(small) {
     width: calcDimension(600px, false, true);
-    // min-width: calc(50% - 100px);
     max-width: 50%;
-     max-height: 300px;
   }
 
  

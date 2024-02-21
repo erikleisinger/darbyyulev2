@@ -2,25 +2,13 @@
   <nav
     class="nav-bar d-flex justify-center align-center"
     :class="{ light, expanded, 'flex-column col-reverse': isXs }"
-    v-if="mounted"
+  
     ref="navbar"
   >
     <div class="nav-menu" :class="{ light }">
-      <div class="nav-menu__button" v-for="option in navOptions" :key="option.name">
-        <NavBarButton :name="option.icon" :selected="route.path === option.path" :light="light" @click="goTo(option.path)"/>
+      <div class="nav-menu__button" v-for="option in NAV_ITEMS" :key="option.name">
+        <NavBarButton :name="option.icon" :text="option.name" :selected="route.path === option.path" :light="light" @click="goTo(option.path)" :hideText="isXs"/>
       </div>
-      <!-- <div class="nav-menu__button">
-        <NavBarButton "  :light="light" @click="goTo('/')" />
-      </div>
-    <div class="nav-menu__button">
-        <NavBarButton name="carbon:user-profile" :light="light" @click="goTo('/philosophy')"/>
-      </div>
-      <div class="nav-menu__button">
-        <NavBarButton name="carbon:workspace" :light="light" @click="goTo('/portfolio')"/>
-      </div>
-      <div class="nav-menu__button">
-        <NavBarButton name="carbon:email" :light="light" @click="goTo('/contact')"/>
-      </div> -->
     </div>
     <div
       class="nav-tab d-flex justify-center align-center"
@@ -43,15 +31,10 @@
 <script setup>
 import { useBreakpoint } from "~/composables/breakpoint";
 import {onClickOutside} from '@vueuse/core'
+import {NAV_ITEMS} from '@/constants/content/nav'
 
 const { isXs } = useBreakpoint();
 const { getColor, light } = useColor();
-
-const mounted = ref(false);
-
-onMounted(() => {
-  mounted.value = true;
-})
 
 const expanded = ref(false);
 
@@ -68,32 +51,11 @@ onClickOutside(navbar, () => {
 
 const route = useRoute();
 
-const navOptions = [
-  {
-    name: "Home",
-    icon: "carbon:home",
-    path: "/",
-  },
-  {
-    name: "Philosophy",
-    icon: "carbon:user-profile",
-    path: "/philosophy",
-  },
-  {
-    name: "Portfolio",
-    icon: "carbon:workspace",
-    path: "/portfolio",
-  },  
-  {
-    name: "Contact",
-    icon: "carbon:email",
-    path: "/contact",
-    }
-]
+
 </script>
 
 <style lang="scss" scoped>
-$nav-width-desktop: 48px;
+$nav-width-desktop: calcDimension(48px, false, true);
 $tab-width-desktop: 24px;
 
 .nav-bar {
@@ -117,7 +79,7 @@ $tab-width-desktop: 24px;
   }
 
   @include breakpoint(small) {
-    transform: translateX(calc(-1 * $nav-width-desktop));
+    transform: translateX(calc(-1 * max($nav-width-desktop, 36px)));
     &.expanded {
      
       transform: translateX(0);
@@ -174,6 +136,7 @@ $tab-width-desktop: 24px;
     width: 100vw;
     @include breakpoint(small) {
       width: $nav-width-desktop;
+      min-width: 36px;
     }
 
     border-top-right-radius: 0;

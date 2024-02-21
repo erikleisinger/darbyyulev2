@@ -10,7 +10,7 @@
     </div>
 </template>
 <script setup>
-    import {PARAGRAPHS} from "@/constants/content";
+    import {PARAGRAPHS} from "@/constants/content/philosophy";
 
 </script>
 <style lang="scss" scoped>
@@ -47,6 +47,12 @@
             line-height: 16px;
             @include breakpoint(small) {
                 line-height: 32px;
+            }
+        }
+
+        h3 {
+            &:after {
+                content: ':'
             }
         }
     }

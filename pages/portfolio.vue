@@ -44,5 +44,5 @@
     }
 </style>
 <script setup>
-    import {PORTFOLIO_ITEMS} from '@/constants/content'
+    import {PORTFOLIO_ITEMS} from '@/constants/content/portfolio'
 </script>

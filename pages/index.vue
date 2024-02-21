@@ -1,5 +1,5 @@
 <template>
-  <div class="splash-container full-page" v-if="mounted">
+  <div class="splash-container full-page">
     <div class="splash-content">
       <header class="splash-header">
         <Logo
@@ -7,65 +7,58 @@
           :color="isXs ? getColor('slate') : getColor('mustard')"
         />
       </header>
-      <main class="splash-photo" style="cursor: pointer" @click="navigateTo('/portfolio')">
-        <img v-if="isXs" :src="'splash_photo_mobile.png'" class="splash-img"/>
-        
+      <main
+        class="splash-photo"
+        style="cursor: pointer"
+        @click="navigateTo('/portfolio')"
+      >
+        <img v-if="isXs" :src="'splash_photo_mobile.png'" class="splash-img" />
+
         <img v-else :src="'splash_photo.png'" class="splash-img" />
       </main>
       <nav class="splash-nav d-flex">
         <div class="clickable" @click="navigateTo('/portfolio')">UX Design</div>
         <div class="clickable" @click="navigateTo('/portfolio')">Graphics</div>
-        <div class="clickable" @click="navigateTo('/portfolio')">UX Writing</div>
+        <div class="clickable" @click="navigateTo('/portfolio')">
+          UX Writing
+        </div>
       </nav>
     </div>
   </div>
 </template>
 <script setup>
-
-
-
 const { getColor } = useColor();
-const {isXs} = useBreakpoint()
-
-const mounted = ref(false)
-onMounted(() => {
-  mounted.value = true;
-})
+const { isXs } = useBreakpoint();
 </script>
 <style lang="scss" scoped>
 .splash-container {
   padding: calcDimension(51px, true, false) calcDimension(67.5px, true, true);
   padding-bottom: unset;
   box-sizing: border-box;
- 
+
   @include breakpoint(small) {
     padding: unset;
     padding-top: calcDimension(80px, false, false);
-    
-  
   }
   .splash-content {
     width: 100%;
     @include breakpoint(small) {
       width: fit-content;
-     
-     
     }
     margin: auto;
     .splash-photo {
-        width: 100%;
-          height: calcDimension(640px, false, false);
-          @include breakpoint(small) {
-            width: fit-content;
-          }
-  
+      width: 100%;
+      height: calcDimension(640px, false, false);
+      @include breakpoint(small) {
+        width: fit-content;
+      }
     }
 
     .splash-header {
       width: fit-content;
       margin-bottom: calcDimension(8px, true, false);
       @include breakpoint(small) {
-        margin-bottom: calcDimension(18px, false, false)
+        margin-bottom: calcDimension(18px, false, false);
       }
     }
   }
@@ -74,7 +67,7 @@ onMounted(() => {
     text-transform: uppercase;
     margin-top: calcDimension(14px, true, false);
     @include breakpoint(small) {
-      margin-top: calcDimension(30px, false, false)
+      margin-top: calcDimension(30px, false, false);
     }
 
     div {
@@ -92,7 +85,7 @@ onMounted(() => {
   .splash-logo {
     height: calcDimension(55px, true, false);
     @include breakpoint(small) {
-      height: calcDimension(91px, false, false)
+      height: calcDimension(91px, false, false);
     }
   }
 
@@ -100,9 +93,8 @@ onMounted(() => {
     width: 100%;
     @include breakpoint(small) {
       width: unset;
-      height: calcDimension(640px, false, false)
+      height: calcDimension(640px, false, false);
     }
-
   }
 }
 </style>

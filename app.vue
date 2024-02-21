@@ -1,7 +1,10 @@
 <template>
-  <NuxtLayout>
+<transition name="page">
+  <NuxtLayout v-if="mounted && !loading" key="app">
     <NuxtPage />
   </NuxtLayout>
+  <Loading v-else key="loading"/>
+</transition>
 </template>
 <style lang="scss">
 .page-enter-active,
@@ -25,4 +28,10 @@ onBeforeMount(() => {
   setVh();
   useEventListener(window, "resize", setVh);
 });
+
+const mounted = ref(false);
+onMounted(() => {
+  mounted.value = true;
+});
+
 </script>

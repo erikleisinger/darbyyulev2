@@ -3,5 +3,6 @@ export const BRAND_COLORS = {
     slate: '#2e2a21',
     white: '#fefefe',
     orange: '#633000',
-    gray: '#989898'
+    gray: '#989898',
+    brown: '#543f03'
 }
