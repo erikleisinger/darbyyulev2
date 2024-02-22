@@ -1,6 +1,6 @@
 <template>
 <transition name="page">
-  <NuxtLayout v-if="mounted && !loading" key="app">
+  <NuxtLayout v-if="mounted" key="app">
     <NuxtPage />
   </NuxtLayout>
   <Loading v-else key="loading"/>

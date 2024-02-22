@@ -1,10 +1,12 @@
 <template>
+
   <nav
     class="nav-bar d-flex justify-center align-center"
     :class="{ light, expanded, 'flex-column col-reverse': isXs }"
   
     ref="navbar"
   >
+  <div class="swipable" ref="swipable" v-if="isXs"/>
     <div class="nav-menu" :class="{ light }">
       <div class="nav-menu__button" v-for="option in NAV_ITEMS" :key="option.name">
         <NavBarButton :name="option.icon" :text="option.name" :selected="route.path === option.path" :light="light" @click="goTo(option.path)" />
@@ -15,6 +17,7 @@
       style="position: relative"
       :class="{ light, clickable: !expanded }"
       @click="expanded = !expanded"
+      ref="tab"
     >
       <Icon
         :name="isXs ? 'mdi:chevron-up' : 'mdi:chevron-right'"
@@ -30,7 +33,7 @@
 
 <script setup>
 import { useBreakpoint } from "~/composables/breakpoint";
-import {onClickOutside} from '@vueuse/core'
+import {onClickOutside, useSwipe, useEventListener} from '@vueuse/core'
 import {NAV_ITEMS} from '@/constants/content/nav'
 
 const { isXs } = useBreakpoint();
@@ -52,11 +55,40 @@ onClickOutside(navbar, () => {
 const route = useRoute();
 
 
+/**
+ * Swipe up on mobile will open the nav bar
+ */
+
+const swipable = ref(null);
+const tab = ref(null)
+
+const onSwipe = () => {
+  if(direction.value === 'up') {
+    expanded.value = true;
+  }
+  if (direction.value === 'down') {
+    expanded.value = false;
+  }
+}
+
+
+/**
+ * Swipe up on mobile will open the nav bar
+ */
+
+const {direction} = useSwipe(navbar, {
+  onSwipe
+})
+
+
+
 </script>
 
 <style lang="scss" scoped>
 $nav-width-desktop: calcDimension(48px, false, true);
 $tab-width-desktop: 24px;
+
+
 
 .nav-bar {
   z-index: 10;
@@ -76,7 +108,21 @@ $tab-width-desktop: 24px;
   transform: translateY(calc(calcDimension(64px, true, false)));
   &.expanded {
      transform: translateY(0);
+     .swipable {
+      transform: translateY(0);
+       height: calcDimension(100px, true, false);
+     }
   }
+
+  .swipable {
+  position: fixed;
+  bottom: 0;
+  z-index: -1;
+  height: calcDimension(80px, true, false);
+  transform: translateY(-1 * calc(calcDimension(64px, true, false)));
+  width: 100vw;
+  pointer-events: all;
+}
 
   @include breakpoint(small) {
     transform: translateX(calc(-1 * max($nav-width-desktop, 36px)));
