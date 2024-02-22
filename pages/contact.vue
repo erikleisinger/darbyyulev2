@@ -97,7 +97,7 @@ const goTo = (link) => {
     display: flex;
     flex-direction: column;
     bottom: calcDimension(71px, true, false);
-    right: calcDimension(18px, true, true);
+    right: calcDimension(32px, true, true);
     gap: 32px;
 
     @include breakpoint(small) {
