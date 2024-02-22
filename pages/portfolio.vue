@@ -23,8 +23,10 @@
 
     h1 {
         width: 100%;
+        font-size: 26px;
         margin-bottom: 16px;
         @include breakpoint(small) {
+            font-size: min(4.9603174603vw, 75px);
             margin-bottom: 12px;
         }
     }

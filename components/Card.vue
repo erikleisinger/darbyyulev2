@@ -77,9 +77,19 @@ const maxHeight = computed(() => `${h2Height.value + pHeight.value + padding.val
     @include breakpoint(small) {
       padding: 15px 11px;
     }
+    h2 {
+      font-size: 16.25px;
+      line-height: 22px;
+      @include breakpoint(small) {
+        font-size: calcDimension(27.92px, false, true);
 
+        line-height: calcDimension(37.87px, false, true)
+      }
+    }
     p {
-      font-size: 9px;
+      font-size: 10.16px;
+      line-height: 14px;
+      font-weight: 500;
       @include breakpoint(small) {
         font-size: calcDimension(17.45px, false, true);
         line-height: calcDimension(23.66px, false, true);
