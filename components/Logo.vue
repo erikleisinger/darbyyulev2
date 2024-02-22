@@ -4,7 +4,7 @@
     viewBox="0 0 408 179"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    @click="onClick"
+    @click="clickLogo"
     style="cursor: pointer"
   >
     <path
@@ -28,11 +28,5 @@ const props = defineProps({
 
 
 });
-const route = useRoute()
-const onClick = () => {
-  if (route.path === '/portfolio') {
-    return navigateTo('/')
-  }
-  return navigateTo('/portfolio')
-}
+const {clickLogo} = useNavigation();
 </script>

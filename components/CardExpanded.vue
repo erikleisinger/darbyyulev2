@@ -138,9 +138,10 @@
         background-color: $brand-yellow;
         width: 100px;
         height: 2px;
-        margin-top: 24px;
+        margin: 24px 0px;;
         @include breakpoint(small) {
           width: 33%;
+          margin-bottom: 0px;
         }
     }
   }
