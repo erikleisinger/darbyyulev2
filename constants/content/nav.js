@@ -17,7 +17,7 @@ export const NAV_ITEMS = [
       },
       {
         name: "About",
-        icon: "carbon:user-profile",
+        icon: "carbon:user",
         path: "/philosophy",
       },
       {
