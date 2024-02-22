@@ -65,7 +65,7 @@ const { isXs } = useBreakpoint();
 
   .splash-nav {
     text-transform: uppercase;
-    margin-top: calcDimension(14px, true, false);
+    margin-top: calcDimension(12px, true, false);
     @include breakpoint(small) {
       margin-top: calcDimension(30px, false, false);
     }
