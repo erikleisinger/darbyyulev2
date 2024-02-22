@@ -4,7 +4,7 @@
       <header class="splash-header">
         <Logo
           class="splash-logo"
-          :color="isXs ? getColor('slate') : getColor('mustard')"
+          :color="getColor('slate')"
         />
       </header>
       <main
@@ -17,10 +17,10 @@
         <img v-else :src="'splash_photo.png'" class="splash-img" />
       </main>
       <nav class="splash-nav d-flex">
-        <div class="clickable" @click="navigateTo('/portfolio')">UX Design</div>
-        <div class="clickable" @click="navigateTo('/portfolio')">Graphics</div>
+        <div class="clickable" @click="navigateTo('/portfolio')">UI Design</div>
+        <div class="clickable" @click="navigateTo('/portfolio')">Design strategy</div>
         <div class="clickable" @click="navigateTo('/portfolio')">
-          UX Writing
+          graphics
         </div>
       </nav>
     </div>

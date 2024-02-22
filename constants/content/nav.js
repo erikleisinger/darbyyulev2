@@ -8,7 +8,7 @@ export const NAV_ITEMS = [
          * Icon corresponding to one of the many icons found at: 
          * https://icones.js.org/
          */
-        icon: "ic:baseline-home",
+        icon: "carbon:home",
         /**
          * WARNING do not update or may break website
          * Route that this button navigates to 
@@ -17,17 +17,17 @@ export const NAV_ITEMS = [
       },
       {
         name: "About",
-        icon: "ion:md-body",
+        icon: "carbon:user-profile",
         path: "/philosophy",
       },
       {
         name: "Work",
-        icon: "material-symbols:apk-document",
+        icon: "carbon:workspace",
         path: "/portfolio",
       },  
       {
         name: "Contact",
-        icon: "material-symbols:mail-rounded",
+        icon: "carbon:email",
         path: "/contact",
         }
 ];

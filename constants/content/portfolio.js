@@ -4,7 +4,6 @@ export const PORTFOLIO_ITEMS = {
         */
    pebble:{
       
-     
        /**
         * The card is displayed on the main 'Work' page. It's the card you click on to view a portfolio piece.
         */
@@ -43,7 +42,7 @@ export const PORTFOLIO_ITEMS = {
             * This determines the vertical and horizontal position of the picture. First number is horizontal, second is vertical. 
             * By default it is centered but if we were to change this to 50% 0% for example then it would be centered horizontally but vertically the top of the image would align with the top of the container.
             */
-           position: '50% 50%',
+           position: '50% 30%',
            /**
             * This is the main description of the project that is directly beneath the title.
             */
@@ -92,10 +91,10 @@ export const PORTFOLIO_ITEMS = {
                    title: 'Content Design',
                    content: `Like most counselling centres, the CCC has a long waiting list. One of the largest barriers to finding mental health help is dealing with the pure volume of other clients who also need help. I came up with the idea to create a page specifically designed for people on the waitlist who need access to help immediately. This page includes videos with basic counselling strategies, links to other forms of help, written directions for emergency situations and access to the contact page for urgent matters.`
                },
-               {
-                   title: 'Development',
-                   content: `Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante`
-               }
+            //    {
+            //        title: 'Development',
+            //        content: `Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante`
+            //    }
            ]
        }
       
@@ -142,7 +141,7 @@ export const PORTFOLIO_ITEMS = {
            title: 'Graphics',
            picture: 'graphics_example.png',
            alt: 'Graphics example',
-           position: '50% 50%',
+           position: '50% 70%',
            description: `Above are a collection of recent graphics and logos that I have created for various projects. In an effort to expand my skillset, I offer graphic design services to companies and individual entrepreneurs. I am passionate about small business and I like to make an effort to be involved when I can. Each of these are small businesses that I have created full redesigns of their brands. `,
            paragraphs: [
                {
@@ -161,21 +160,21 @@ export const PORTFOLIO_ITEMS = {
        }
        
    },
-   ux_writing: {
+//    ux_writing: {
       
-       card: {
-           title: 'UX Writing',
-           content: `A collection of UX Writing I have created for various projects. This collection includes blogs, pop ups, website content, content design.`,
-           picture: 'ux_writing_example.png',
-           alt: 'UX Writing example'
-       },
-       expanded: {
-           title: 'UX Writing',
-           picture: 'ux_writing_example.png',
-           alt: 'UX Writing example',
-           position: '50% 50%'
-       }
+//        card: {
+//            title: 'UX Writing',
+//            content: `A collection of UX Writing I have created for various projects. This collection includes blogs, pop ups, website content, content design.`,
+//            picture: 'ux_writing_example.png',
+//            alt: 'UX Writing example'
+//        },
+//        expanded: {
+//            title: 'UX Writing',
+//            picture: 'ux_writing_example.png',
+//            alt: 'UX Writing example',
+//            position: '50% 50%'
+//        }
        
-   }
+//    }
 }
 
