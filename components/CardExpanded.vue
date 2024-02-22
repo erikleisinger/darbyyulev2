@@ -72,8 +72,7 @@
       
       }
       > p {
-        font-size: 14px;
-        line-height: 18px;
+        
         margin-top: 16px;
       }
       @include breakpoint(small) {

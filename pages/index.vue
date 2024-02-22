@@ -71,7 +71,7 @@ const { isXs } = useBreakpoint();
     }
 
     div {
-      font-size: 8px;
+      font-size: 13.19px;
       @include breakpoint(small) {
         font-size: calcDimension(22px, false, false);
       }
