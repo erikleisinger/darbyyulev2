@@ -87,6 +87,7 @@
           font-size: 46px;
         }
       }
+      margin-bottom: 64px;
     }
 
     .card-picture {
