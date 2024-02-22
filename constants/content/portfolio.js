@@ -47,6 +47,9 @@ export const PORTFOLIO_ITEMS = {
             * This is the main description of the project that is directly beneath the title.
             */
            description: `Pebble is an app designed for Curling teams to track their progress and games. It also infused a social media element where users can add each other to teams and earn badges for achieving certain accomplishments (some good, some bad). I was the sole UI/UX Designer on the project, I worked along a team of technical professionals to make the vision happen. In the early stages of research and ideation, I realized that I needed to take a broader approach to ,my role in the team and focus on things like Design Systems and Information Architecture instead of getting into the nitty-gritty details. Once we moved onto the testable phase of the app, I was also tasked with some of the graphic design elements such as the logo design and the brand pattern. `,
+           /**
+            * The three paragraphs at the bottom of the expanded content. Each array item is a paragraph.
+            */
            paragraphs: [
                {
                    title: 'Design System',
@@ -60,7 +63,11 @@ export const PORTFOLIO_ITEMS = {
                    title: 'Graphic Design',
                    content: `After the Design System was done, Pebble needed branding. I was tasked with creating a logo and brand identity. In its initial stages, I played with the idea of the logo being a triangle mosaic of a curling target. It would make it easy to use triangles in all sorts of visual components. It was decided that the style did not fit the rest of the theme and I went simpler. The final version of the logo is a very friendly, simple graphic depicting the name ‘pebble’ with the ‘E’ as a curling rock. Much like the story of pebble, the logo is simple, friendly, and fun`
                }
-           ]
+           ],
+           /**
+            * The color of the 'X' button in the top-right corner. This corresponds to the name of one of the colors in ./color.js. i.e. 'slate' would make the X #2e2a21
+            */
+           xColor: 'white'
        },
       
    },
@@ -95,7 +102,8 @@ export const PORTFOLIO_ITEMS = {
             //        title: 'Development',
             //        content: `Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante`
             //    }
-           ]
+           ],
+           xColor: 'white'
        }
       
    },
@@ -126,7 +134,8 @@ export const PORTFOLIO_ITEMS = {
                title: 'Prototyping',
                content: `Like most counselling centres, the CCC has a long waiting list. One of the largest barriers to finding mental health help is dealing with the pure volume of other clients who also need help. I came up with the idea to create a page specifically designed for people on the waitlist who need access to help immediately. This page includes videos with basic counselling strategies, links to other forms of help, written directions for emergency situations and access to the contact page for urgent matters.`
            }
-           ]
+           ],
+           xColor: 'slate'
        }
      
    },
@@ -156,7 +165,9 @@ export const PORTFOLIO_ITEMS = {
                    title: 'Vanessa Francia Logo (Right)',
                    content: `Like most counselling centres, the CCC has a long waiting list. One of the largest barriers to finding mental health help is dealing with the pure volume of other clients who also need help. I came up with the idea to create a page specifically designed for people on the waitlist who need access to help immediately. This page includes videos with basic counselling strategies, links to other forms of help, written directions for emergency situations and access to the contact page for urgent matters.`
                }
-           ]
+           ],
+           xColor: 'white'
+
        }
        
    },
@@ -172,7 +183,8 @@ export const PORTFOLIO_ITEMS = {
 //            title: 'UX Writing',
 //            picture: 'ux_writing_example.png',
 //            alt: 'UX Writing example',
-//            position: '50% 50%'
+//            position: '50% 50%',
+            // xColor: 'white'
 //        }
        
 //    }

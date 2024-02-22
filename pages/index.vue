@@ -47,9 +47,10 @@ const { isXs } = useBreakpoint();
     }
     margin: auto;
     .splash-photo {
-      width: 100%;
-      height: calcDimension(640px, false, false);
+      height: 100%;
+     height: calcDimension(375px, true, false);
       @include breakpoint(small) {
+         height: calcDimension(640px, false, false);
         width: fit-content;
       }
     }
@@ -91,6 +92,8 @@ const { isXs } = useBreakpoint();
 
   .splash-img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     @include breakpoint(small) {
       width: unset;
       height: calcDimension(640px, false, false);

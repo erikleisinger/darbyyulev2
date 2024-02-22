@@ -24,6 +24,9 @@
             <p>{{ paragraph.content }}</p>
           </div>
         </div>
+         <div v-if="!isXs" class="divider">
+            <div class="divider-line"/>
+        </div>
       </div>
     </main>
     <div class="exit-button__floating">
@@ -32,6 +35,7 @@
         class="clickable"
         @click="emit('close')"
         size="2em"
+        :color="getColor(item.expanded.xColor)"
       />
     </div>
   </div>
@@ -134,7 +138,10 @@
         background-color: $brand-yellow;
         width: 100px;
         height: 2px;
-        margin: 24px 0px;
+        margin-top: 24px;
+        @include breakpoint(small) {
+          width: 33%;
+        }
     }
   }
 }
@@ -151,4 +158,6 @@ const item = PORTFOLIO_ITEMS[props.id];
 const emit = defineEmits(["close"]);
 
 const {isXs} = useBreakpoint();
+const {getColor} = useColor();
+
 </script>

@@ -7,7 +7,7 @@
   >
     <div class="nav-menu" :class="{ light }">
       <div class="nav-menu__button" v-for="option in NAV_ITEMS" :key="option.name">
-        <NavBarButton :name="option.icon" :text="option.name" :selected="route.path === option.path" :light="light" @click="goTo(option.path)" :hideText="isXs"/>
+        <NavBarButton :name="option.icon" :text="option.name" :selected="route.path === option.path" :light="light" @click="goTo(option.path)" />
       </div>
     </div>
     <div
@@ -73,7 +73,7 @@ $tab-width-desktop: 24px;
   }
   transition: transform 0.2s;
 
-  transform: translateY(calc(calcDimension(46px, true, false)));
+  transform: translateY(calc(calcDimension(64px, true, false)));
   &.expanded {
      transform: translateY(0);
   }
@@ -126,8 +126,8 @@ $tab-width-desktop: 24px;
   }
 
   .nav-menu {
-    height: calcDimension(46px, true, false);
-    max-height: calcDimension(46px, true, false);
+    height: calcDimension(64px, true, false);
+    max-height: calcDimension(64px, true, false);
     @include breakpoint(small) {
       height: calcDimension(507.27px, false, false);
       max-height: calcDimension(507.27px, false, false);
@@ -159,7 +159,7 @@ $tab-width-desktop: 24px;
       justify-content: center;
       align-items: center;
 
-      padding: calcDimension(8px, true, false);
+      // padding-bottom: calcDimension(8px, true, false);
       @include breakpoint(small) {
         padding: 12px;
       }

@@ -1,4 +1,1 @@
-- add text back to navbar
-- add line to bottom of desktop expanded content
 - loading D is briefly in top-left corner
-- make darkhorse X black

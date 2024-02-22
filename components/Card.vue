@@ -25,6 +25,13 @@ const item = PORTFOLIO_ITEMS[props.id];
 
 const expanded = ref(false);
 
+onBeforeRouteLeave(() => {
+  if (expanded.value) {
+    expanded.value = false;
+    return false;
+  }
+})
+
 
 /**
  * Ensure height of card is the same as the content
@@ -47,7 +54,6 @@ const maxHeight = computed(() => `${h2Height.value + pHeight.value + padding.val
   display: grid;
   grid-template-columns: 30% 70%;
   overflow: hidden;
-  flex-grow: 1;
   max-height: v-bind(maxHeight);
   @include breakpoint(small) {
     width: calcDimension(600px, false, true);

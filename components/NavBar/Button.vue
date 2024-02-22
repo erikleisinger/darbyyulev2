@@ -9,8 +9,8 @@
 <style lang="scss" scoped>
 $icon-size-desktop: 40px;
 .nav-button {
-  height: 100%;
-  width: 100%;
+  // height: 100%;
+  // width: 100%;
   cursor: pointer;
   transition: all 0.2s;
   &:hover {
@@ -24,7 +24,7 @@ $icon-size-desktop: 40px;
   }
 }
 .button-text {
-     font-size: max(calcDimension(10px, true, true), 7px);
+     font-size: max(calcDimension(11px, true, true), 7px);
     @include breakpoint(small) {
   font-size: max(calcDimension(10px, false, true), 7px);
     }
@@ -34,18 +34,22 @@ $icon-size-desktop: 40px;
   width: 100%;
 
   .text {
-    position: absolute;
+    text-align:center;
+    @include breakpoint(small) {
+ position: absolute;
     left: 50%;
     transform: translateX(-50%);
     margin: auto;
     text-align: center;
     margin-left: -0%;
+    }
+   
   }
 }
-
+  $icon-size-xs: 36px;
 .nav-button__icon {
-  width: 100%;
-  height: 100%;
+  width: $icon-size-xs;
+  height: $icon-size-xs;
   @include breakpoint(small) {
     height: calcDimension($icon-size-desktop, false, false);
     width: calcDimension($icon-size-desktop, false, false);
