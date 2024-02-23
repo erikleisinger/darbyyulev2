@@ -5,27 +5,27 @@
         <img
           :src="item.expanded.picture"
           :alt="item.expanded.alt"
-          :style="{ 'object-position': item.expanded.position }"
+          :style="{ 'object-position': item.expanded.position, left: isXs ? item.expanded.pictureLeft : '', top: isXs ? item.expanded.pictureTop : '', width: isXs ? item.expanded.pictureWidth : '' }"
         />
       </div>
       <div class="card-content">
         <h1>{{ item.expanded.title }}</h1>
         <p>{{ item.expanded.description }}</p>
         <div v-if="isXs" class="divider">
-            <div class="divider-line"/>
+          <div class="divider-line" />
         </div>
         <div class="paragraphs-container">
           <div
-            v-for="paragraph, index in item.expanded.paragraphs"
+            v-for="(paragraph, index) in item.expanded.paragraphs"
             :key="paragraph.title"
             class="paragraph"
           >
-            <h3>{{indexToRoman(index)}}. {{ paragraph.title }}</h3>
+            <h3>{{ indexToRoman(index) }}. {{ paragraph.title }}</h3>
             <p>{{ paragraph.content }}</p>
           </div>
         </div>
-         <div v-if="!isXs" class="divider">
-            <div class="divider-line"/>
+        <div v-if="!isXs" class="divider">
+          <div class="divider-line" />
         </div>
       </div>
     </main>
@@ -60,28 +60,32 @@
 
   .card-expanded__content {
     display: grid;
-    grid-template-rows: calcDimension(175px, true, false) auto;
+    grid-template-rows: calcDimension(193px, true, false) auto;
     @include breakpoint(small) {
       grid-template-rows: calcDimension(425px, false, false) auto;
     }
 
     .card-content {
-        margin: calcDimension(14px, true, false) calcDimension(24px, true, true);
+      margin: calcDimension(14px, true, false) calcDimension(24px, true, true);
       > h1 {
-        font-size: 23.7px;
-        line-height: 28.89px;
+        font-size: 26.02px;
+        line-height: 31.71px;
       }
       h3 {
+        font-size: 10px;
+        line-height: 13px;
         font-weight: normal;
-      
       }
-      > p {
-        
-        margin-top: 16px;
+      p {
+        font-size: 16.26px;
+        line-height: 22px;
+        font-weight: 500;
       }
+    
       @include breakpoint(small) {
-        margin: calcDimension(46px, false, false) calcDimension(122px, false, true);
-       
+        margin: calcDimension(46px, false, false)
+          calcDimension(122px, false, true);
+
         > p {
           font-size: 18px;
           line-height: 18px;
@@ -98,17 +102,32 @@
       overflow: hidden;
       position: relative;
       img {
-        object-fit: cover;
+      
+       
+        object-fit: cover; /* Fill the container */
+        position: absolute; /* Position the image absolutely */
+   
+        transform: translate(-50%, -50%); /* Center the image */
+        @include breakpoint(small) {
+          object-fit: cover;
+          position: relative;
+          transform: unset;
+          top: unset;
+          left: unset;
+          height: 100%;
+          width: 100%;
 
-        height: 100%;
-        width: 100%;
-
-        margin: auto;
+          margin: auto;
+        }
       }
     }
 
     .paragraphs-container {
-      
+      p, h3 {
+        font-size: 10.16px;
+        line-height:13.78px;
+      }
+  
       @include breakpoint(small) {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -120,10 +139,10 @@
 
       .paragraph {
         min-width: 50%;
-          margin-bottom: 24px;
-          @include breakpoint(small) {
-            margin-bottom: unset;
-          }
+        margin-bottom: 24px;
+        @include breakpoint(small) {
+          margin-bottom: unset;
+        }
       }
     }
   }
@@ -135,21 +154,21 @@
     align-items: center;
 
     .divider-line {
-        background-color: $brand-yellow;
-        width: 100px;
-        height: 2px;
-        margin: 24px 0px;;
-        @include breakpoint(small) {
-          width: 33%;
-          margin-bottom: 0px;
-        }
+      background-color: $brand-yellow;
+      width: 100px;
+      height: 2px;
+      margin: 24px 0px;
+      @include breakpoint(small) {
+        width: 33%;
+        margin-bottom: 0px;
+      }
     }
   }
 }
 </style>
 <script setup>
 import { PORTFOLIO_ITEMS } from "@/constants/content/portfolio";
-import indexToRoman from '@/utils/roman-numerals'
+import indexToRoman from "@/utils/roman-numerals";
 const props = defineProps({
   id: [String, Number],
 });
@@ -158,7 +177,6 @@ const item = PORTFOLIO_ITEMS[props.id];
 
 const emit = defineEmits(["close"]);
 
-const {isXs} = useBreakpoint();
-const {getColor} = useColor();
-
+const { isXs } = useBreakpoint();
+const { getColor } = useColor();
 </script>

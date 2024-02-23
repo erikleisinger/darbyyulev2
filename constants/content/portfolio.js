@@ -39,10 +39,27 @@ export const PORTFOLIO_ITEMS = {
             */
            alt: 'Pebble app example',
            /**
+            * DESKTOP ONLY
             * This determines the vertical and horizontal position of the picture. First number is horizontal, second is vertical. 
             * By default it is centered but if we were to change this to 50% 0% for example then it would be centered horizontally but vertically the top of the image would align with the top of the container.
             */
            position: '50% 30%',
+           /**
+            * MOBILE ONLY
+            * position of picture in % left from left side of the screen
+            */
+           pictureLeft: '50%',
+           /**
+            * MOBILE ONLY
+            * position picture in % top from top of screen
+            */
+           pictureTop: '65%',
+           /**
+            * MOBILE ONLY
+            * controls zoom of picture
+            * 100% is normal, larger is zoomed in
+            */
+           pictureWidth: '170%',
            /**
             * This is the main description of the project that is directly beneath the title.
             */
@@ -83,6 +100,9 @@ export const PORTFOLIO_ITEMS = {
            picture: 'ccc_example.png',
            alt: 'Counselling Centre example',
            position: '50% 50%',
+           pictureLeft: '50%',
+           pictureTop: '50%',
+           pictureWidth: '150%',
            description: `The Community Counselling Centre is a Non-Profit Organization that offers ‘low-barrier’ counselling services to anyone who needs it. They are a partner of the University of British Columbia’s Counselling Master’s Program; offering hands on experience to students finishing their practicum.  I approached the CCC with an offer to perform a full-scale re-design of their website including UX Research, UI Development, Content Design, and Website Development.
            After customer research, I realized that my task for the CCC was based around the question, ‘How might we adjust the CCC’s online presence to make first point of contact simple for clients?’ Thus, I redesigned site’s IA, User Interface and Content to reduce barriers for clients`,
            paragraphs: [
@@ -120,6 +140,9 @@ export const PORTFOLIO_ITEMS = {
            picture: 'darkhorse_example.png',
            alt: 'Darkhorse app example',
            position: '50% 50%',
+           pictureLeft: '50%',
+           pictureTop: '50%',
+           pictureWidth: '200%',
            description: `Darkhorse Emergency is an offshoot of the Edmonton, AB based company Darkhorse Analytics. Darkhorse Emergency provides analytics to many Canadian first response units such as Fire Services and Ambulances. My UX Team and I were tasked with a total design overhaul of their Deployment tool which is mainly used for planning and lobbying for funds to stakeholders. I was tasked with redesigning the dashboard.`,
            paragraphs: [
                {
@@ -151,6 +174,9 @@ export const PORTFOLIO_ITEMS = {
            picture: 'graphics_example.png',
            alt: 'Graphics example',
            position: '50% 70%',
+           pictureLeft: '50%',
+           pictureTop: '35%',
+           pictureWidth: '160%',
            description: `Above are a collection of recent graphics and logos that I have created for various projects. In an effort to expand my skillset, I offer graphic design services to companies and individual entrepreneurs. I am passionate about small business and I like to make an effort to be involved when I can. Each of these are small businesses that I have created full redesigns of their brands. `,
            paragraphs: [
                {
@@ -184,6 +210,9 @@ export const PORTFOLIO_ITEMS = {
 //            picture: 'ux_writing_example.png',
 //            alt: 'UX Writing example',
 //            position: '50% 50%',
+// pictureLeft: '50%',
+// pictureTop: '50%',
+// pictureWidth: '150%',
             // xColor: 'white'
 //        }
        
