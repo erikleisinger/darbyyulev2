@@ -63,7 +63,7 @@ export const PORTFOLIO_ITEMS = {
            /**
             * This is the main description of the project that is directly beneath the title.
             */
-           description: `Pebble is an app designed for Curling teams to track their progress and games. It also infused a social media element where users can add each other to teams and earn badges for achieving certain accomplishments (some good, some bad). I was the sole UI/UX Designer on the project, I worked along a team of technical professionals to make the vision happen. In the early stages of research and ideation, I realized that I needed to take a broader approach to ,my role in the team and focus on things like Design Systems and Information Architecture instead of getting into the nitty-gritty details. Once we moved onto the testable phase of the app, I was also tasked with some of the graphic design elements such as the logo design and the brand pattern. `,
+           description: `Pebble is an app designed for Curling teams to track their progress and games. It also infused a social media element where users can add each other to teams and earn badges for achieving certain accomplishments (some good, some bad). I was the sole UI/UX Designer on the project, I worked along a team of technical professionals to make the vision happen. In the early stages of research and ideation, I realized that I needed to take a broader approach to, my role in the team and focus on things like Design Systems and Information Architecture instead of getting into the nitty-gritty details. Once we moved onto the testable phase of the app, I was also tasked with some of the graphic design elements such as the logo design and the brand pattern. `,
            /**
             * The three paragraphs at the bottom of the expanded content. Each array item is a paragraph.
             */
@@ -78,7 +78,7 @@ export const PORTFOLIO_ITEMS = {
                },
                {
                    title: 'Graphic Design',
-                   content: `After the Design System was done, Pebble needed branding. I was tasked with creating a logo and brand identity. In its initial stages, I played with the idea of the logo being a triangle mosaic of a curling target. It would make it easy to use triangles in all sorts of visual components. It was decided that the style did not fit the rest of the theme and I went simpler. The final version of the logo is a very friendly, simple graphic depicting the name ‘pebble’ with the ‘E’ as a curling rock. Much like the story of pebble, the logo is simple, friendly, and fun`
+                   content: `After the Design System was done, Pebble needed branding. I was tasked with creating a logo and brand identity. In its initial stages, I played with the idea of the logo being a triangle mosaic of a curling target. It would make it easy to use triangles in all sorts of visual components. It was decided that the style did not fit the rest of the theme and I went simpler. The final version of the logo is a very friendly, simple graphic depicting the name ‘pebble’ with the ‘E’ as a curling rock. Much like the story of pebble, the logo is simple, friendly, and fun.`
                }
            ],
            /**
@@ -104,7 +104,7 @@ export const PORTFOLIO_ITEMS = {
            pictureTop: '50%',
            pictureWidth: '150%',
            description: `The Community Counselling Centre is a Non-Profit Organization that offers ‘low-barrier’ counselling services to anyone who needs it. They are a partner of the University of British Columbia’s Counselling Master’s Program; offering hands on experience to students finishing their practicum.  I approached the CCC with an offer to perform a full-scale re-design of their website including UX Research, UI Development, Content Design, and Website Development.
-           After customer research, I realized that my task for the CCC was based around the question, ‘How might we adjust the CCC’s online presence to make first point of contact simple for clients?’ Thus, I redesigned site’s IA, User Interface and Content to reduce barriers for clients`,
+           After customer research, I realized that my task for the CCC was based around the question, ‘How might we adjust the CCC’s online presence to make first point of contact simple for clients?’ Thus, I redesigned site’s IA, User Interface and Content to reduce barriers for clients.`,
            paragraphs: [
                {
                    title: 'Information Architecture (IA)',
