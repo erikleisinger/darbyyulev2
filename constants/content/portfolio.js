@@ -103,7 +103,7 @@ export const PORTFOLIO_ITEMS = {
            pictureLeft: '50%',
            pictureTop: '50%',
            pictureWidth: '150%',
-           description: `The Community Counselling Centre is a Non-Profit Organization that offers ‘low-barrier’ counselling services to anyone who needs it. They are a partner of the University of British Columbia’s Counselling Master’s Program; offering hands on experience to students finishing their practicum.  I approached the CCC with an offer to perform a full-scale re-design of their website including UX Research, UI Development, Content Design, and Website Development.
+           description: `The Community Counselling Centre is a Non-Profit Organization that offers ‘low-barrier’ counselling services to anyone who needs it. They are a partner of the University of Northern British Columbia’s Counselling Master’s Program; offering hands on experience to students finishing their practicum.  I approached the CCC with an offer to perform a full-scale re-design of their website including UX Research, UI Development, Content Design, and Website Development.
            After customer research, I realized that my task for the CCC was based around the question, ‘How might we adjust the CCC’s online presence to make first point of contact simple for clients?’ Thus, I redesigned site’s IA, User Interface and Content to reduce barriers for clients.`,
            paragraphs: [
                {
@@ -189,7 +189,7 @@ export const PORTFOLIO_ITEMS = {
                },
                {
                    title: 'Vanessa Francia Logo (Right)',
-                   content: `Like most counselling centres, the CCC has a long waiting list. One of the largest barriers to finding mental health help is dealing with the pure volume of other clients who also need help. I came up with the idea to create a page specifically designed for people on the waitlist who need access to help immediately. This page includes videos with basic counselling strategies, links to other forms of help, written directions for emergency situations and access to the contact page for urgent matters.`
+                   content: `Vanessa Francia is a Architectural Drafter from Burnaby, BC. She enlisted me to design her portfolio and logo to help showcase her blueprints to clients. When designing her logo, I found that drafters need to show that they are able to interpret architectural design with extreme precision and clarity. Her logo needed to have elements of all of that in it plus the added element of speed. I came up with the logo above. A drafting compass with speed lines that creates her initials.`
                }
            ],
            xColor: 'white'
