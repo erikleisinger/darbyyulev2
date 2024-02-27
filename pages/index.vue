@@ -72,9 +72,12 @@ const { isXs } = useBreakpoint();
     }
 
     div {
-      font-size: 13.19px;
+      font-size: 11.72px;
+      line-height: 15.87px;
       @include breakpoint(small) {
-        font-size: calcDimension(22px, false, false);
+        font-size: calcDimension(21.49px, false, false);
+       
+        line-height: calcDimension(29.14px, false, false);
       }
     }
     justify-content: space-around;

@@ -38,9 +38,11 @@
         }
 
         p, h3 {
-            font-size: 14.81px;
+            font-size: 11.72px;
+            line-height: 12.89px;
             @include breakpoint(small) {
-                font-size: 29px;
+                font-size: 21.49px;
+                line-height: 23.64px;
             }
         }
         p {

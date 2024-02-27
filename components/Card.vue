@@ -56,7 +56,7 @@ const maxHeight = computed(() => `${h2Height.value + pHeight.value + padding.val
   overflow: hidden;
   max-height: v-bind(maxHeight);
   @include breakpoint(small) {
-    width: calcDimension(600px, false, true);
+    width: calc(50% - 20px);
     max-width: 50%;
   }
 

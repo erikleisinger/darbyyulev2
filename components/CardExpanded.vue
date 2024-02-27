@@ -68,8 +68,8 @@
     .card-content {
       margin: calcDimension(14px, true, false) calcDimension(24px, true, true);
       > h1 {
-        font-size: 26.02px;
-        line-height: 31.71px;
+        font-size: 30px;
+        line-height: 36.57px;
       }
       h3 {
         font-size: 10px;
@@ -77,8 +77,8 @@
         font-weight: normal;
       }
       p {
-        font-size: 16.26px;
-        line-height: 22px;
+        font-size: 18.75px;
+        line-height: 25.43px;
         font-weight: 500;
       }
     
@@ -86,12 +86,13 @@
         margin: calcDimension(46px, false, false)
           calcDimension(122px, false, true);
 
-        > p {
-          font-size: 18px;
-          line-height: 18px;
+         >p {
+          font-size: 21.49px;
+          line-height: 25.79px;
         }
-        > h1 {
-          font-size: 46px;
+         >h1 {
+          font-size: 55px;
+          line-height: 67.05px;
         }
       }
       margin-bottom: 64px;
@@ -124,8 +125,8 @@
 
     .paragraphs-container {
       p, h3 {
-        font-size: 10.16px;
-        line-height:13.78px;
+        font-size: 11.73px;
+        line-height:15.89px;
       }
   
       @include breakpoint(small) {
@@ -135,11 +136,15 @@
         margin-top: calcDimension(36px, false, false);
         font-size: 11px;
         line-height: 15px;
+         p, h3 {
+        font-size: 13.43px;
+        line-height:18.21px;
+      }
       }
 
       .paragraph {
         min-width: 50%;
-        margin-bottom: 24px;
+        margin-bottom: 16px;
         @include breakpoint(small) {
           margin-bottom: unset;
         }

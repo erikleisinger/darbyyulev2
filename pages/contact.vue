@@ -74,20 +74,29 @@ const goTo = (link) => {
       }
     }
 
+    h1 {
+      font-size: 30px;
+      line-height:36.57px;
+    }
+    >div {
+      font-size: 18.75px;
+      line-height: 25.43px;
+    }
+
     @include breakpoint(small) {
-      padding: 0px calcDimension(144px, false, true);
+      padding: 0px calcDimension(117px, false, true);
       height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       h1 {
-        font-size: 46px;
-        line-height: 56px;
+        font-size: 55px;
+        line-height: 67px;
       }
       > div {
-        font-size: 29px;
-        line-height: 39px;
+        font-size: 34px;
+        line-height: 46px;
       }
     }
   }
