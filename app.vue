@@ -19,6 +19,7 @@
 </style>
 <script setup>
 import { useEventListener } from "@vueuse/core";
+import {preloadImages} from '@/utils/preload'
 const setVh = () => {
   const vh = Math.floor(window.innerHeight * 0.01);
   document.documentElement.style.setProperty("--vh", `${vh}px`);
@@ -30,7 +31,10 @@ onBeforeMount(() => {
 });
 
 const mounted = ref(false);
-onMounted(() => {
+onMounted(async () => {
+
+  await preloadImages();
+
   mounted.value = true;
 });
 
