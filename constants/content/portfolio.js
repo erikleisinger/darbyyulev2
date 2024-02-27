@@ -147,15 +147,15 @@ export const PORTFOLIO_ITEMS = {
            paragraphs: [
                {
                    title: 'Research',
-               content: `How the information on the website is presented is ket to lowering barriers for clients trying to access help. After doing user research, I realized that there are two types of people using counselling sites. One knows that they want help for sure, and the other is still deciding on whether they need help or not. Thus, I added a primary and secondary button that made it easy to navigate to the part of the website each type of user is trying access instantly.`
+               content: `Darkhorse Emergency knew that their current application was unclear and somewhat ‘janky’. My first order of business was to conduct a Heuristics Analysis on the dashboard. After this, my team and I ran Card Sorting Workshops with potential users and analysts from the company to gain some generative knowledge on how we might empower new users and onboard them in an intuitive and accessible way.`
            },
            {
                title: 'User Interface Design',
-               content: `The CCC already has a design strategy that they preferred to use. Given that, my work on the UI had a lot more to do with making it calming, competent, and easy to user/look at. I made the main elements look like leaves of a lotus flower (the CCC’s symbol), I used calming gradients, and i based all of the visuals around hands reaching out for help. Our hands are such powerful indicators of our emotions. They are a powerful way of showing emotion and strength`
+               content: `The data from the users as well as Darkhorses Analyst suggested that the Statistics and Drop Down menus were in the wrong places so I swapped them to be more intuitive.  I put the statistics on the top of the app where they will be viewed first, then I put the drop down menus on the side. We also added a much more visible Compare Button as that it now one of the main features of the app. It allows users to contrast and compare scenarios easily.`
            },
            {
-               title: 'Prototyping',
-               content: `Like most counselling centres, the CCC has a long waiting list. One of the largest barriers to finding mental health help is dealing with the pure volume of other clients who also need help. I came up with the idea to create a page specifically designed for people on the waitlist who need access to help immediately. This page includes videos with basic counselling strategies, links to other forms of help, written directions for emergency situations and access to the contact page for urgent matters.`
+               title: 'Accessibility and Placement',
+               content: `In the final iteration of this design, you can see that all of the colour and buttons have been designed and put into place. This version meets all accessibility standards as well as needs very little explanation for new users. All of the main actions a user can do are found on the left side of the page while the statistics are found up top. It clearly encourages users to add a station or compare the scenario that they have created. Then they can filter their results on the upper right corner of the screen beside the statistics.`
            }
            ],
            xColor: 'slate'
