@@ -63,7 +63,7 @@ export const PORTFOLIO_ITEMS = {
            /**
             * This is the main description of the project that is directly beneath the title.
             */
-           description: `Pebble is an app designed for Curling teams to track their progress and games. It also infused a social media element where users can add each other to teams and earn badges for achieving certain accomplishments (some good, some bad). I was the sole UI/UX Designer on the project, I worked along a team of technical professionals to make the vision happen. In the early stages of research and ideation, I realized that I needed to take a broader approach to ,my role in the team and focus on things like Design Systems and Information Architecture instead of getting into the nitty-gritty details. Once we moved onto the testable phase of the app, I was also tasked with some of the graphic design elements such as the logo design and the brand pattern. `,
+           description: `Pebble is an app designed for Curling teams to track their progress and games. It also infused a social media element where users can add each other to teams and earn badges for achieving certain accomplishments (some good, some bad). I was the sole UI/UX Designer on the project, I worked along a team of technical professionals to make the vision happen. In the early stages of research and ideation, I realized that I needed to take a broader approach to, my role in the team and focus on things like Design Systems and Information Architecture instead of getting into the nitty-gritty details. Once we moved onto the testable phase of the app, I was also tasked with some of the graphic design elements such as the logo design and the brand pattern. `,
            /**
             * The three paragraphs at the bottom of the expanded content. Each array item is a paragraph.
             */
@@ -78,7 +78,7 @@ export const PORTFOLIO_ITEMS = {
                },
                {
                    title: 'Graphic Design',
-                   content: `After the Design System was done, Pebble needed branding. I was tasked with creating a logo and brand identity. In its initial stages, I played with the idea of the logo being a triangle mosaic of a curling target. It would make it easy to use triangles in all sorts of visual components. It was decided that the style did not fit the rest of the theme and I went simpler. The final version of the logo is a very friendly, simple graphic depicting the name ‘pebble’ with the ‘E’ as a curling rock. Much like the story of pebble, the logo is simple, friendly, and fun`
+                   content: `After the Design System was done, Pebble needed branding. I was tasked with creating a logo and brand identity. In its initial stages, I played with the idea of the logo being a triangle mosaic of a curling target. It would make it easy to use triangles in all sorts of visual components. It was decided that the style did not fit the rest of the theme and I went simpler. The final version of the logo is a very friendly, simple graphic depicting the name ‘pebble’ with the ‘E’ as a curling rock. Much like the story of pebble, the logo is simple, friendly, and fun.`
                }
            ],
            /**
@@ -103,8 +103,8 @@ export const PORTFOLIO_ITEMS = {
            pictureLeft: '50%',
            pictureTop: '50%',
            pictureWidth: '150%',
-           description: `The Community Counselling Centre is a Non-Profit Organization that offers ‘low-barrier’ counselling services to anyone who needs it. They are a partner of the University of British Columbia’s Counselling Master’s Program; offering hands on experience to students finishing their practicum.  I approached the CCC with an offer to perform a full-scale re-design of their website including UX Research, UI Development, Content Design, and Website Development.
-           After customer research, I realized that my task for the CCC was based around the question, ‘How might we adjust the CCC’s online presence to make first point of contact simple for clients?’ Thus, I redesigned site’s IA, User Interface and Content to reduce barriers for clients`,
+           description: `The Community Counselling Centre is a Non-Profit Organization that offers ‘low-barrier’ counselling services to anyone who needs it. They are a partner of the University of Northern British Columbia’s Counselling Master’s Program; offering hands on experience to students finishing their practicum.  I approached the CCC with an offer to perform a full-scale re-design of their website including UX Research, UI Development, Content Design, and Website Development.
+           After customer research, I realized that my task for the CCC was based around the question, ‘How might we adjust the CCC’s online presence to make first point of contact simple for clients?’ Thus, I redesigned site’s IA, User Interface and Content to reduce barriers for clients.`,
            paragraphs: [
                {
                    title: 'Information Architecture (IA)',
@@ -147,15 +147,15 @@ export const PORTFOLIO_ITEMS = {
            paragraphs: [
                {
                    title: 'Research',
-               content: `How the information on the website is presented is ket to lowering barriers for clients trying to access help. After doing user research, I realized that there are two types of people using counselling sites. One knows that they want help for sure, and the other is still deciding on whether they need help or not. Thus, I added a primary and secondary button that made it easy to navigate to the part of the website each type of user is trying access instantly.`
+               content: `Darkhorse Emergency knew that their current application was unclear and somewhat ‘janky’. My first order of business was to conduct a Heuristics Analysis on the dashboard. After this, my team and I ran Card Sorting Workshops with potential users and analysts from the company to gain some generative knowledge on how we might empower new users and onboard them in an intuitive and accessible way.`
            },
            {
                title: 'User Interface Design',
-               content: `The CCC already has a design strategy that they preferred to use. Given that, my work on the UI had a lot more to do with making it calming, competent, and easy to user/look at. I made the main elements look like leaves of a lotus flower (the CCC’s symbol), I used calming gradients, and i based all of the visuals around hands reaching out for help. Our hands are such powerful indicators of our emotions. They are a powerful way of showing emotion and strength`
+               content: `The data from the users as well as Darkhorses Analyst suggested that the Statistics and Drop Down menus were in the wrong places so I swapped them to be more intuitive.  I put the statistics on the top of the app where they will be viewed first, then I put the drop down menus on the side. We also added a much more visible Compare Button as that it now one of the main features of the app. It allows users to contrast and compare scenarios easily.`
            },
            {
-               title: 'Prototyping',
-               content: `Like most counselling centres, the CCC has a long waiting list. One of the largest barriers to finding mental health help is dealing with the pure volume of other clients who also need help. I came up with the idea to create a page specifically designed for people on the waitlist who need access to help immediately. This page includes videos with basic counselling strategies, links to other forms of help, written directions for emergency situations and access to the contact page for urgent matters.`
+               title: 'Accessibility and Placement',
+               content: `In the final iteration of this design, you can see that all of the colour and buttons have been designed and put into place. This version meets all accessibility standards as well as needs very little explanation for new users. All of the main actions a user can do are found on the left side of the page while the statistics are found up top. It clearly encourages users to add a station or compare the scenario that they have created. Then they can filter their results on the upper right corner of the screen beside the statistics.`
            }
            ],
            xColor: 'slate'
@@ -185,11 +185,11 @@ export const PORTFOLIO_ITEMS = {
                },
                {
                    title: 'The Chevys Re-Brand (Middle)',
-                   content: `The Chevys are a Rockabilly band from Northern BC. I have a soft spot for the entertainment industry as I have a background in bands and songwriting myself. This job was a no-brainer for me. The Chevys’ main demographic is older males who live in Northern BC. They tend to be into cars, live music and beer. I designed the`
+                   content: `The Chevys are a Rockabilly band from Northern BC. I have a soft spot for the entertainment industry as I have a background in bands and songwriting myself. This job was a no-brainer for me. The Chevys’ main demographic is older males who live in Northern BC. They tend to be into cars, live music and beer. I designed their poster to be an old school chevy driving through a snowy forest. I imagine that it is the band driving the car to a gig in the north somewhere.`
                },
                {
                    title: 'Vanessa Francia Logo (Right)',
-                   content: `Like most counselling centres, the CCC has a long waiting list. One of the largest barriers to finding mental health help is dealing with the pure volume of other clients who also need help. I came up with the idea to create a page specifically designed for people on the waitlist who need access to help immediately. This page includes videos with basic counselling strategies, links to other forms of help, written directions for emergency situations and access to the contact page for urgent matters.`
+                   content: `Vanessa Francia is a Architectural Drafter from Burnaby, BC. She enlisted me to design her portfolio and logo to help showcase her blueprints to clients. When designing her logo, I found that drafters need to show that they are able to interpret architectural design with extreme precision and clarity. Her logo needed to have elements of all of that in it plus the added element of speed. I came up with the logo above. A drafting compass with speed lines that creates her initials.`
                }
            ],
            xColor: 'white'
