@@ -185,7 +185,7 @@ export const PORTFOLIO_ITEMS = {
                },
                {
                    title: 'The Chevys Re-Brand (Middle)',
-                   content: `The Chevys are a Rockabilly band from Northern BC. I have a soft spot for the entertainment industry as I have a background in bands and songwriting myself. This job was a no-brainer for me. The Chevys’ main demographic is older males who live in Northern BC. They tend to be into cars, live music and beer. I designed the`
+                   content: `The Chevys are a Rockabilly band from Northern BC. I have a soft spot for the entertainment industry as I have a background in bands and songwriting myself. This job was a no-brainer for me. The Chevys’ main demographic is older males who live in Northern BC. They tend to be into cars, live music and beer. I designed their poster to be an old school chevy driving through a snowy forest. I imagine that it is the band driving the car to a gig in the north somewhere.`
                },
                {
                    title: 'Vanessa Francia Logo (Right)',
