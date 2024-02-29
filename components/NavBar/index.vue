@@ -1,15 +1,24 @@
 <template>
-
   <nav
     class="nav-bar d-flex justify-center align-center"
-    :class="{ light, expanded, 'flex-column col-reverse': isXs }"
-  
+    :class="{ light, expanded, 'flex-column col-reverse': !isMed }"
+    :style="{ transform: transform }"
     ref="navbar"
   >
-  <div class="swipable" ref="swipable" v-if="isXs"/>
-    <div class="nav-menu" :class="{ light }">
-      <div class="nav-menu__button" v-for="option in NAV_ITEMS" :key="option.name">
-        <NavBarButton :name="option.icon" :text="option.name" :selected="route.path === option.path" :light="light" @click="goTo(option.path)" />
+    <div class="swipable" ref="swipable" v-if="!isMed" />
+    <div class="nav-menu" :class="{ light }" ref="navMenu">
+      <div
+        class="nav-menu__button"
+        v-for="option in NAV_ITEMS"
+        :key="option.name"
+      >
+        <NavBarButton
+          :name="option.icon"
+          :text="option.name"
+          :selected="route.path === option.path"
+          :light="light"
+          @click="goTo(option.path)"
+        />
       </div>
     </div>
     <div
@@ -20,23 +29,29 @@
       ref="tab"
     >
       <Icon
-        :name="isXs ? 'mdi:chevron-up' : 'mdi:chevron-right'"
+        :name="isMed ? 'mdi:chevron-right' : 'mdi:chevron-up'"
         :color="light ? getColor('mustard') : 'white'"
-        :size="isXs ? '45px' : '48px'"
+        
         style="position: absolute; margin: auto"
         class="tab-icon"
         :class="{ expanded }"
       />
+      <!-- :size="isMed ? '48px' : '45px'" -->
     </div>
   </nav>
 </template>
 
 <script setup>
 import { useBreakpoint } from "~/composables/breakpoint";
-import {onClickOutside, useSwipe, useEventListener} from '@vueuse/core'
-import {NAV_ITEMS} from '@/constants/content/nav'
+import {
+  onClickOutside,
+  useSwipe,
+  useEventListener,
+  useElementSize,
+} from "@vueuse/core";
+import { NAV_ITEMS } from "@/constants/content/nav";
 
-const { isXs } = useBreakpoint();
+const { isXs, isMed } = useBreakpoint();
 const { getColor, light } = useColor();
 
 const expanded = ref(false);
@@ -50,45 +65,62 @@ const navbar = ref(null);
 
 onClickOutside(navbar, () => {
   expanded.value = false;
-})
+});
 
 const route = useRoute();
-
 
 /**
  * Swipe up on mobile will open the nav bar
  */
 
 const swipable = ref(null);
-const tab = ref(null)
+const tab = ref(null);
 
 const onSwipe = () => {
-  if(direction.value === 'up') {
+  if (direction.value === "up") {
     expanded.value = true;
   }
-  if (direction.value === 'down') {
+  if (direction.value === "down") {
     expanded.value = false;
   }
-}
-
+};
 
 /**
  * Swipe up on mobile will open the nav bar
  */
 
-const {direction} = useSwipe(navbar, {
-  onSwipe
-})
+const { direction } = useSwipe(navbar, {
+  onSwipe,
+});
 
+/**
+ * Calc show/hide translations
+ */
 
+const navMenu = ref(null);
 
+const { height: navHeight, width: navWidth } = useElementSize(navMenu);
+
+const transform = computed(() => {
+  if (isMed.value) {
+    if (expanded.value) {
+      return "translateX(0)";
+    } else {
+      return `translateX(-${Math.ceil(navWidth.value)}px)`;
+    }
+  } else {
+    if (expanded.value) {
+      return "translateY(0)";
+    } else {
+      return `translateY(${Math.ceil(navHeight.value)}px)`;
+    }
+  }
+});
 </script>
 
 <style lang="scss" scoped>
 $nav-width-desktop: calcDimension(48px, false, true);
-$tab-width-desktop: 24px;
-
-
+$tab-width-desktop: 32px;
 
 .nav-bar {
   z-index: 10;
@@ -99,37 +131,25 @@ $tab-width-desktop: 24px;
   right: 0;
   margin: auto;
 
-  @include breakpoint(small) {
+  @include breakpoint(medium) {
     top: 0;
     right: unset;
   }
-  transition: transform 0.2s;
 
-  transform: translateY(calc(calcDimension(64px, true, false)));
-  &.expanded {
-     transform: translateY(0);
-     .swipable {
-      transform: translateY(0);
-       height: calcDimension(100px, true, false);
-     }
+  transition: transform 0.2s;
+  .swipable {
+    transform: translateY(0);
+    height: calcDimension(100px, true, false);
   }
 
   .swipable {
-  position: fixed;
-  bottom: 0;
-  z-index: -1;
-  height: calcDimension(80px, true, false);
-  transform: translateY(-1 * calc(calcDimension(64px, true, false)));
-  width: 100vw;
-  pointer-events: all;
-}
-
-  @include breakpoint(small) {
-    transform: translateX(calc(-1 * max($nav-width-desktop, 36px)));
-    &.expanded {
-     
-      transform: translateX(0);
-    }
+    position: fixed;
+    bottom: 0;
+    z-index: -1;
+    height: calcDimension(80px, true, false);
+    transform: translateY(-1 * calc(calcDimension(64px, true, false)));
+    width: 100vw;
+    pointer-events: all;
   }
 
   .nav-menu,
@@ -141,53 +161,62 @@ $tab-width-desktop: 24px;
   }
 
   .nav-tab {
-    height: 20px;
+    height: min(23px, calcDimension(23px, true, true));
 
-    @include breakpoint(small) {
+    @include breakpoint(medium) {
       height: calcDimension(165px, false, false);
     }
 
-    width: 69px;
-    @include breakpoint(small) {
+    width: min(69px, calcDimension(69px, true, true));
+    @include breakpoint(medium) {
+      width: min($tab-width-desktop, calcDimension($tab-width-desktop, false, true));
       width: $tab-width-desktop;
     }
 
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    @include breakpoint(small) {
+    border-top-right-radius: min(10px, calcDimension(10px, true, true));
+    border-top-left-radius: min(10px, calcDimension(10px, true, true));
+    @include breakpoint(medium) {
       border-top-left-radius: unset;
       border-top-right-radius: 16.75px;
       border-bottom-right-radius: 16.75px;
     }
 
     cursor: pointer;
+    $tab-chevron-dimension: 30px;
+    $tab-chevron-dimension-desktop: 48px;
 
-    .tab-icon {
+     :deep(.tab-icon) {
       transition: transform 0.2s;
       transform: rotate(0deg);
+      height: min($tab-chevron-dimension, calcDimension($tab-chevron-dimension, true, true));
+       width: min($tab-chevron-dimension, calcDimension($tab-chevron-dimension, true, true));
       &.expanded {
         transform: rotate(180deg);
       }
+
+      @include breakpoint(medium) {
+         height: min($tab-chevron-dimension-desktop, calcDimension($tab-chevron-dimension-desktop, true, true));
+       width: min($tab-chevron-dimension-desktop, calcDimension($tab-chevron-dimension-desktop, true, true));
+      }
     }
+
+   
   }
 
   .nav-menu {
-    height: calcDimension(64px, true, false);
-    max-height: calcDimension(64px, true, false);
-    @include breakpoint(small) {
+    @include breakpoint(medium) {
       height: calcDimension(507.27px, false, false);
       max-height: calcDimension(507.27px, false, false);
     }
 
     width: 100vw;
-    @include breakpoint(small) {
-      width: $nav-width-desktop;
-      min-width: 36px;
+    @include breakpoint(medium) {
+      width: unset;
     }
 
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    @include breakpoint(small) {
+    @include breakpoint(medium) {
       border-top-right-radius: 6px;
       border-bottom-right-radius: 6px;
     }
@@ -195,7 +224,7 @@ $tab-width-desktop: 24px;
     display: flex;
 
     flex-direction: row;
-    @include breakpoint(small) {
+    @include breakpoint(medium) {
       flex-direction: column;
     }
 
@@ -205,13 +234,14 @@ $tab-width-desktop: 24px;
       justify-content: center;
       align-items: center;
 
-      // padding-bottom: calcDimension(8px, true, false);
-      @include breakpoint(small) {
-        padding: 12px;
-      }
+      // @include breakpoint(medium) {
+      //   padding: 4px;
+      // }
     }
   }
 }
+
+
 </style>
 <script>
 export default {

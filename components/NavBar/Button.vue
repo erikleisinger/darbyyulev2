@@ -8,49 +8,46 @@
 </template>
 <style lang="scss" scoped>
 $icon-size-desktop: 40px;
+$icon-size-xs: 30px;
 .nav-button {
-  // height: 100%;
-  // width: 100%;
   cursor: pointer;
   transition: all 0.2s;
   &:hover {
     color: $brand-orange;
   }
 
-  @include breakpoint(small) {
-    display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4px 0px;
+
+  @include breakpoint(medium) {
+
     height: unset;
     width: unset;
+    padding: 0px 8px;
   }
 }
 .button-text {
-     font-size: max(calcDimension(11px, true, true), 7px);
-    @include breakpoint(small) {
-  font-size: max(calcDimension(10px, false, true), 7px);
-    }
+  font-size: max(calcDimension(8px, true, true), 7px);
+  @include breakpoint(medium) {
+    font-size: 12px;
+  }
 
   font-weight: 900;
   position: relative;
   width: 100%;
 
   .text {
-    text-align:center;
-    @include breakpoint(small) {
- position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: auto;
     text-align: center;
-    margin-left: -0%;
-    }
-   
+    width: 100%;
   }
 }
-  $icon-size-xs: 36px;
+
 .nav-button__icon {
-  width: $icon-size-xs;
-  height: $icon-size-xs;
-  @include breakpoint(small) {
+  width: min(20px, calcDimension($icon-size-xs, true, true));
+  height: min(20px, calcDimension($icon-size-xs, true, true));
+  @include breakpoint(medium) {
     height: calcDimension($icon-size-desktop, false, false);
     width: calcDimension($icon-size-desktop, false, false);
     min-width: 24px;

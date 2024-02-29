@@ -1,5 +1,5 @@
 <template>
-  <div class="card-container clickable" @click="expanded = true">
+  <div class="card-container clickable" @click="expanded = true" :style="{minHeight: minHeight}">
     <div class="card-image-container">
       <div class="card-image__control">
         <img :src="item.card.picture" :alt="item.card.alt" />
@@ -11,17 +11,18 @@
     </div>
   </div>
   <transition name="page">
-    <CardExpanded v-if="expanded" :id="id" @close="expanded = false" />
+    <CardExpanded v-if="expanded" :identifier="identifier" @close="expanded = false" />
   </transition>
 </template>
 <script setup>
 import { PORTFOLIO_ITEMS } from "@/constants/content/portfolio";
 import {useElementBounding} from '@vueuse/core';
 const props = defineProps({
-  id: [Number, String],
+  identifier: [Number, String],
+  minHeight: String
 });
 
-const item = PORTFOLIO_ITEMS[props.id];
+const item = PORTFOLIO_ITEMS[props.identifier];
 
 const expanded = ref(false);
 
@@ -83,6 +84,9 @@ const maxHeight = computed(() => `${h2Height.value + pHeight.value + padding.val
     @include breakpoint(small) {
       padding: 15px 11px;
     }
+
+
+    
     h2 {
       font-size: 16.25px;
       line-height: 22px;

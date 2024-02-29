@@ -10,7 +10,7 @@
       </div>
       <div class="card-content">
         <h1>{{ item.expanded.title }}</h1>
-        <p>{{ item.expanded.description }}</p>
+        <p class="overview">{{ item.expanded.description }}</p>
         <div v-if="isXs" class="divider">
           <div class="divider-line" />
         </div>
@@ -76,26 +76,35 @@
         line-height: 13px;
         font-weight: normal;
       }
-      p {
+      p.overview {
         font-size: 18.75px;
         line-height: 25.43px;
         font-weight: 500;
+      }
+
+        p, h3 {
+        font-size: 11.73px;
+        line-height:15.89px;
       }
     
       @include breakpoint(small) {
         margin: calcDimension(46px, false, false)
           calcDimension(122px, false, true);
 
-         >p {
-          font-size: 21.49px;
-          line-height: 25.79px;
+         p.overview {         
+          font-size: max(14px, calcDimension(21.49px, false, true));
+          line-height: max(16px, calcDimension(25.79px, false, true));
         }
          >h1 {
-          font-size: 55px;
-          line-height: 67.05px;
+          font-size: calcDimension(55px, false, true);
+          line-height: calcDimension(67.05px, false, true);
         }
+        p, h3 {
+        font-size: max(12px,calcDimension(13.43px, false, true));
+        line-height:max(14px, calcDimension(18.21px, false, true));
       }
-      margin-bottom: 64px;
+      }
+      margin-bottom: calcDimension(64px, false, false);
     }
 
     .card-picture {
@@ -124,10 +133,7 @@
     }
 
     .paragraphs-container {
-      p, h3 {
-        font-size: 11.73px;
-        line-height:15.89px;
-      }
+    
   
       @include breakpoint(small) {
         display: grid;
@@ -136,10 +142,7 @@
         margin-top: calcDimension(36px, false, false);
         font-size: 11px;
         line-height: 15px;
-         p, h3 {
-        font-size: 13.43px;
-        line-height:18.21px;
-      }
+      
       }
 
       .paragraph {
@@ -175,10 +178,10 @@
 import { PORTFOLIO_ITEMS } from "@/constants/content/portfolio";
 import indexToRoman from "@/utils/roman-numerals";
 const props = defineProps({
-  id: [String, Number],
+  identifier: [String, Number],
 });
 
-const item = PORTFOLIO_ITEMS[props.id];
+const item = PORTFOLIO_ITEMS[props.identifier];
 
 const emit = defineEmits(["close"]);
 
