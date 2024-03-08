@@ -63,18 +63,18 @@ export const PORTFOLIO_ITEMS = {
            /**
             * This is the main description of the project that is directly beneath the title.
             */
-           description: `Pebble is an app designed for Curling teams to track their progress and games. It also infused a social media element where users can add each other to teams and earn badges for achieving certain accomplishments (some good, some bad). I was the sole UI/UX Designer on the project, I worked along a team of technical professionals to make the vision happen. In the early stages of research and ideation, I realized that I needed to take a broader approach to, my role in the team and focus on things like Design Systems and Information Architecture instead of getting into the nitty-gritty details. Once we moved onto the testable phase of the app, I was also tasked with some of the graphic design elements such as the logo design and the brand pattern. `,
+           description: `Pebble is a Web-App designed for Curling teams to track their progress and games. I was the sole UI/UX Designer on the project, I worked along a team of technical professionals to make the vision happen. In the early stages of research and ideation, I realized that most curlers do their own stats and tracking on spreadsheets. It is difficult for more than one team member to access statistics or go over games because the team lead is normally the only one with access. On top of that, curling is a very friendly, social port and most curlers do not like using traditional sporting apps because they feel too intense and exclusive. They need an app that is inclusive to casual players and easy to track games or stats. I set out to answer the question, ‘How might we make it easy for a user to navigate, understand, and interact with the app in a meaningful way?’`,
            /**
             * The three paragraphs at the bottom of the expanded content. Each array item is a paragraph.
             */
            paragraphs: [
                {
-                   title: 'Design System',
-                   content: `As a creative, I believe in allowing myself an adequate amount of time to solve a problem. This helps me find the best possible solution instead of the quickest one. Collaboration is important to me when working with a group so I decided that a broad approach, such as creating a design system, was necessary. For the design system, I tried to balance a sense of fun with utility. The users are people who play casually but do things like create tournaments and develop teams.`
+                   title: 'LoFi Wireframing and Information Architecture',
+                   content: `Pebble is in it’s initial stages of development. Scope creep was a real issue in the beginning since this idea has such potential. We decided to stick to four (4) main screens for the first iteration: a game page, a team page, a personal page, and a rink page. We made it easy for user to create teams and add themselves to rinks. From there, they can challenge other teams to games. The game results automatically update the team’s stats as well as the player’s and club’s.`
                },
                {
-                   title: 'Information Architecture',
-                   content: `Scope Creep was a real issue with this project. It has such potential to be larger than an app made to just keep score and stats for a team. When approaching the IA, we kept on coming up with ideas for social networking, tournament organization, badges, etc that would be great to implement in the future but we realized that it needed to stick to it’s roots first. The IA was made so users can create a profile, join a team, add themselves to a rink, and play a game. Simple and useful with a lot of space for growth.`
+                   title: 'HiFi Wireframing and Deign System',
+                   content: `One of the largest issues we found in research was that most curlers find traditional sporting apps uninviting. This is a stats based app but it’s also made for rec league players. I decided that a friendly but minimalist design would be a perfect marriage between these two concepts. There is also a large population of curlers that are older so making it minimalist with a strong focus on accessibility was paramount in this project. I also went for slightly muted colours to give it a slight ‘beer-league’ effect, making it friendly and different.`
                },
                {
                    title: 'Graphic Design',
