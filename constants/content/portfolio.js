@@ -63,7 +63,7 @@ export const PORTFOLIO_ITEMS = {
            /**
             * This is the main description of the project that is directly beneath the title.
             */
-           description: `Pebble is a Web-App designed for Curling teams to track their progress and games. I was the sole UI/UX Designer on the project, I worked along a team of technical professionals to make the vision happen. In the early stages of research and ideation, I realized that most curlers do their own stats and tracking on spreadsheets. It is difficult for more than one team member to access statistics or go over games because the team lead is normally the only one with access. On top of that, curling is a very friendly, social port and most curlers do not like using traditional sporting apps because they feel too intense and exclusive. They need an app that is inclusive to casual players and easy to track games or stats. I set out to answer the question, ‘How might we make it easy for a user to navigate, understand, and interact with the app in a meaningful way?’`,
+           description: `Pebble is a Web-App designed for Curling teams to track their progress and games. I was the sole UI/UX Designer on the project, I worked along a team of technical professionals to make the vision happen. In the early stages of research and ideation, I realized that most curlers do their own stats and tracking on spreadsheets. It is difficult for more than one team member to access statistics or go over games because the team lead is normally the only one with access. On top of that, curling is a very friendly, social sport and most curlers do not like using traditional sporting apps because they feel too intense and exclusive. They need an app that is inclusive to casual players and easy to track games or stats. I set out to answer the question, ‘How might we make it easy for a user to navigate, understand, and interact with the app in a meaningful way?’`,
            /**
             * The three paragraphs at the bottom of the expanded content. Each array item is a paragraph.
             */
@@ -73,7 +73,7 @@ export const PORTFOLIO_ITEMS = {
                    content: `Pebble is in it’s initial stages of development. Scope creep was a real issue in the beginning since this idea has such potential. We decided to stick to four (4) main screens for the first iteration: a game page, a team page, a personal page, and a rink page. We made it easy for user to create teams and add themselves to rinks. From there, they can challenge other teams to games. The game results automatically update the team’s stats as well as the player’s and club’s.`
                },
                {
-                   title: 'HiFi Wireframing and Deign System',
+                   title: 'HiFi Wireframing and Design System',
                    content: `One of the largest issues we found in research was that most curlers find traditional sporting apps uninviting. This is a stats based app but it’s also made for rec league players. I decided that a friendly but minimalist design would be a perfect marriage between these two concepts. There is also a large population of curlers that are older so making it minimalist with a strong focus on accessibility was paramount in this project. I also went for slightly muted colours to give it a slight ‘beer-league’ effect, making it friendly and different.`
                },
                {
