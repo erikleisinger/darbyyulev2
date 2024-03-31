@@ -63,18 +63,18 @@ export const PORTFOLIO_ITEMS = {
            /**
             * This is the main description of the project that is directly beneath the title.
             */
-           description: `Pebble is an app designed for Curling teams to track their progress and games. It also infused a social media element where users can add each other to teams and earn badges for achieving certain accomplishments (some good, some bad). I was the sole UI/UX Designer on the project, I worked along a team of technical professionals to make the vision happen. In the early stages of research and ideation, I realized that I needed to take a broader approach to, my role in the team and focus on things like Design Systems and Information Architecture instead of getting into the nitty-gritty details. Once we moved onto the testable phase of the app, I was also tasked with some of the graphic design elements such as the logo design and the brand pattern. `,
+           description: `Pebble is a Web-App designed for Curling teams to track their progress and games. I was the sole UI/UX Designer on the project, I worked along a team of technical professionals to make the vision happen. In the early stages of research and ideation, I realized that most curlers do their own stats and tracking on spreadsheets. It is difficult for more than one team member to access statistics or go over games because the team lead is normally the only one with access. On top of that, curling is a very friendly, social sport and most curlers do not like using traditional sporting apps because they feel too intense and exclusive. They need an app that is inclusive to casual players and easy to track games or stats. I set out to answer the question, ‘How might we make it easy for a user to navigate, understand, and interact with the app in a meaningful way?’`,
            /**
             * The three paragraphs at the bottom of the expanded content. Each array item is a paragraph.
             */
            paragraphs: [
                {
-                   title: 'Design System',
-                   content: `As a creative, I believe in allowing myself an adequate amount of time to solve a problem. This helps me find the best possible solution instead of the quickest one. Collaboration is important to me when working with a group so I decided that a broad approach, such as creating a design system, was necessary. For the design system, I tried to balance a sense of fun with utility. The users are people who play casually but do things like create tournaments and develop teams.`
+                   title: 'LoFi Wireframing and Information Architecture',
+                   content: `Pebble is in it’s initial stages of development. Scope creep was a real issue in the beginning since this idea has such potential. We decided to stick to four (4) main screens for the first iteration: a game page, a team page, a personal page, and a rink page. We made it easy for user to create teams and add themselves to rinks. From there, they can challenge other teams to games. The game results automatically update the team’s stats as well as the player’s and club’s.`
                },
                {
-                   title: 'Information Architecture',
-                   content: `Scope Creep was a real issue with this project. It has such potential to be larger than an app made to just keep score and stats for a team. When approaching the IA, we kept on coming up with ideas for social networking, tournament organization, badges, etc that would be great to implement in the future but we realized that it needed to stick to it’s roots first. The IA was made so users can create a profile, join a team, add themselves to a rink, and play a game. Simple and useful with a lot of space for growth.`
+                   title: 'HiFi Wireframing and Design System',
+                   content: `One of the largest issues we found in research was that most curlers find traditional sporting apps uninviting. This is a stats based app but it’s also made for rec league players. I decided that a friendly but minimalist design would be a perfect marriage between these two concepts. There is also a large population of curlers that are older so making it minimalist with a strong focus on accessibility was paramount in this project. I also went for slightly muted colours to give it a slight ‘beer-league’ effect, making it friendly and different.`
                },
                {
                    title: 'Graphic Design',
@@ -180,16 +180,16 @@ export const PORTFOLIO_ITEMS = {
            description: `Above are a collection of recent graphics and logos that I have created for various projects. In an effort to expand my skillset, I offer graphic design services to companies and individual entrepreneurs. I am passionate about small business and I like to make an effort to be involved when I can. Each of these are small businesses that I have created full redesigns of their brands. `,
            paragraphs: [
                {
-                   title: 'Pebble Logo (Left)',
+                   title: 'The Statistics Cover (Left)',
+                   content: `The Statistics are a professionally touring band that approached me about making a cover for their new single. After some research and observations on The Statistics’ social media analytics tells me that their main demographic is both men and women in their 30s who fall on the more hipster side culturally. I decided that a cover of sparrows flying away with a minimalist sun in the background. The sun is also indicative of a record and sits boldly on the page.`
+               },
+               {
+                   title: 'Beachcombers Coffee (Middle)',
+                   content: `Beachcombers Coffee is a coffee roasters and cafe in Gibsons, BC. They wanted a design for their new small sized coffee cup that fit their regular branding but made it extra special because they had held out on offering a small size for so long. I noticed that they have these amazing murals on their walls inside the cafe that the medium and large sizes are based on. I took the deer in one of their murals and gave it a cutting edge, geometric design.`
+               },
+               {
+                   title: 'Pebble Logo (Right)',
                    content: `Pebble has its own section of my portfolio but I felt it was important to highlight the logo. Pebble is a curling app that needs to be usable and friendly. We were aiming for it to be fun and useful. The logo represents the lowercase ‘e’ in ‘pebble’ as well as a curling rock. I made sure that the colours were energetic and fun. The shapes are rounded and friendly. It is easy to add it into the full name of the brand as well as it can stand on it’s own as a brand mark. This makes it versatile and easy to use.`
-               },
-               {
-                   title: 'The Chevys Re-Brand (Middle)',
-                   content: `The Chevys are a Rockabilly band from Northern BC. I have a soft spot for the entertainment industry as I have a background in bands and songwriting myself. This job was a no-brainer for me. The Chevys’ main demographic is older males who live in Northern BC. They tend to be into cars, live music and beer. I designed their poster to be an old school chevy driving through a snowy forest. I imagine that it is the band driving the car to a gig in the north somewhere.`
-               },
-               {
-                   title: 'Vanessa Francia Logo (Right)',
-                   content: `Vanessa Francia is a Architectural Drafter from Burnaby, BC. She enlisted me to design her portfolio and logo to help showcase her blueprints to clients. When designing her logo, I found that drafters need to show that they are able to interpret architectural design with extreme precision and clarity. Her logo needed to have elements of all of that in it plus the added element of speed. I came up with the logo above. A drafting compass with speed lines that creates her initials.`
                }
            ],
            xColor: 'white'
