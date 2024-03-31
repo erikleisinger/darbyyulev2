@@ -116,6 +116,16 @@ const transform = computed(() => {
     }
   }
 });
+
+const transition = ref(null);
+
+onMounted(() => {
+  setTimeout(() => {
+    transition.value = 'transform 0.2s'
+  }, 100)
+
+})
+
 </script>
 
 <style lang="scss" scoped>
@@ -136,7 +146,7 @@ $tab-width-desktop: 32px;
     right: unset;
   }
 
-  transition: transform 0.2s;
+  transition: v-bind(transition);
   .swipable {
     transform: translateY(0);
     height: calcDimension(100px, true, false);

@@ -108,7 +108,6 @@
     }
 
     .card-picture {
-      background-color: yellow;
       overflow: hidden;
       position: relative;
       img {
